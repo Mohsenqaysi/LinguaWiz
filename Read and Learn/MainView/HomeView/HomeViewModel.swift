@@ -52,4 +52,6 @@ extension HomeViewModel {
     var levelFourIcon: String { "levelFourIcon" }
     var lockIcon: String { "lockIcon" }
     var activeLevelIcon: String { "activeLevelIcon" }
+    var headerIcon: String { "headerIcon" }
+    var buttonIcon: String { "buttonIcon" }
 }

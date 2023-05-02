@@ -20,8 +20,40 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 ForEach(viewModel.levels, id: \.title) { level in
                     NavigationLink {
-                        Text(level.title)
-                            .navigationBarTitle(level.subTitle, displayMode: .inline)
+                        VStack(alignment: .center) {
+                            Image(viewModel.headerIcon)
+                                .overlay(alignment: .center) {
+                                    ZStack(alignment: .bottom) {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .fill(Color.white)
+                                            .frame(width: 343, height: 276)
+                                            .overlay(alignment: .center) {
+                                                VStack {
+                                                    Text("Some food stands have little plastic seats where you can sit and eat they cook the same dish over and over, like fried chicken on rice or Pad Thai noodles.")
+                                                        .multilineTextAlignment(.center)
+                                                    Spacer()
+                                                }
+                                                .padding(.top, 20)
+
+                                            }
+
+                                        Rectangle()
+                                            .fill(Palette.backgroundOrangeLight.color)
+                                            .frame(width: 343, height: 73)
+
+                                            .overlay(alignment: .center) {
+                                                Button {
+                                                } label: {
+                                                    Image(viewModel.buttonIcon)
+                                                        .frame(width: 48, height: 43.35)
+                                                        .clipShape(Circle())
+                                                }
+                                            }
+                                    }
+                                }
+                            Spacer()
+                        }
+                        .navigationBarTitle("\(level.title) \(level.subTitle)", displayMode: .inline)
                     } label: {
                         cellView(level)
                             .overlay(alignment: .topLeading) {
