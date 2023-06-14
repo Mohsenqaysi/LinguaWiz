@@ -10,48 +10,18 @@ import DesignSystem
 
 struct HomeView: View {
     @ObservedObject private var viewModel: HomeViewModel
-
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 ForEach(viewModel.levels, id: \.title) { level in
                     NavigationLink {
                         VStack(alignment: .center) {
-                            Image(viewModel.headerIcon)
-                                .overlay(alignment: .center) {
-                                    ZStack(alignment: .bottom) {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.white)
-                                            .frame(width: 343, height: 276)
-                                            .overlay(alignment: .center) {
-                                                VStack {
-                                                    Text("Some food stands have little plastic seats where you can sit and eat they cook the same dish over and over, like fried chicken on rice or Pad Thai noodles.")
-                                                        .multilineTextAlignment(.center)
-                                                    Spacer()
-                                                }
-                                                .padding(.top, 20)
-
-                                            }
-
-                                        Rectangle()
-                                            .fill(Palette.backgroundOrangeLight.color)
-                                            .frame(width: 343, height: 73)
-
-                                            .overlay(alignment: .center) {
-                                                Button {
-                                                } label: {
-                                                    Image(viewModel.buttonIcon)
-                                                        .frame(width: 48, height: 43.35)
-                                                        .clipShape(Circle())
-                                                }
-                                            }
-                                    }
-                                }
-                            Spacer()
+                            DetailsView(viewModel: DetailsViewModel(level: level))
                         }
                         .navigationBarTitle("\(level.title) \(level.subTitle)", displayMode: .inline)
                     } label: {
@@ -81,7 +51,7 @@ extension HomeView {
                 .background(level.unlocked ? Palette.backgroundPurple.color : .gray)
         }
     }
-
+    
     private func cellView(_ level: Level) -> some View {
         VStack(alignment: .leading) {
             HStack(alignment: .bottom) {
