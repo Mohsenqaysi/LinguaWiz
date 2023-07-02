@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100D63A42A4854F500A67C4F /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 100D63A32A4854F500A67C4F /* DesignSystem */; };
+		100D63AD2A4857FE00A67C4F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63A62A4857FE00A67C4F /* Helper.swift */; };
+		100D63AE2A4857FE00A67C4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63A72A4857FE00A67C4F /* Extensions.swift */; };
+		100D63AF2A4857FE00A67C4F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63A82A4857FE00A67C4F /* AudioRecorder.swift */; };
+		100D63B02A4857FE00A67C4F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63A92A4857FE00A67C4F /* AudioPlayer.swift */; };
+		100D63B12A4857FE00A67C4F /* RecodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63AA2A4857FE00A67C4F /* RecodingView.swift */; };
+		100D63B22A4857FE00A67C4F /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63AB2A4857FE00A67C4F /* RecordingDataModel.swift */; };
+		100D63B32A4857FE00A67C4F /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D63AC2A4857FE00A67C4F /* RecordingsList.swift */; };
+		1070496B2A4DC8B70060C8D2 /* synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070496A2A4DC8B70060C8D2 /* synth.swift */; };
+		107049712A4DE5DC0060C8D2 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 107049702A4DE5DC0060C8D2 /* WrappingHStack */; };
+		107049742A4DED5E0060C8D2 /* DictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049732A4DED5E0060C8D2 /* DictionaryModel.swift */; };
+		1070497A2A4DEE150060C8D2 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049772A4DEE140060C8D2 /* HTTPStatusCode.swift */; };
+		1070497B2A4DEE150060C8D2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049782A4DEE140060C8D2 /* APIError.swift */; };
+		1070497C2A4DEE150060C8D2 /* CombineAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049792A4DEE150060C8D2 /* CombineAPIClient.swift */; };
+		107049802A4DEE260060C8D2 /* DictionaryAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070497E2A4DEE260060C8D2 /* DictionaryAPIRequest.swift */; };
+		107049812A4DEE260060C8D2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070497F2A4DEE260060C8D2 /* APIRequest.swift */; };
+		107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049832A4DF0CD0060C8D2 /* DictionaryView.swift */; };
+		107049862A4DF0E00060C8D2 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
 		FC1248F529FFEFC9006A5668 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F429FFEFC9006A5668 /* MainView.swift */; };
 		FC1248F729FFEFCA006A5668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1248F629FFEFCA006A5668 /* Assets.xcassets */; };
@@ -21,6 +39,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100D63A62A4857FE00A67C4F /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		100D63A72A4857FE00A67C4F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		100D63A82A4857FE00A67C4F /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		100D63A92A4857FE00A67C4F /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		100D63AA2A4857FE00A67C4F /* RecodingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecodingView.swift; sourceTree = "<group>"; };
+		100D63AB2A4857FE00A67C4F /* RecordingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
+		100D63AC2A4857FE00A67C4F /* RecordingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
+		1070496A2A4DC8B70060C8D2 /* synth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = synth.swift; sourceTree = "<group>"; };
+		107049732A4DED5E0060C8D2 /* DictionaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModel.swift; sourceTree = "<group>"; };
+		107049772A4DEE140060C8D2 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		107049782A4DEE140060C8D2 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		107049792A4DEE150060C8D2 /* CombineAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineAPIClient.swift; sourceTree = "<group>"; };
+		1070497E2A4DEE260060C8D2 /* DictionaryAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAPIRequest.swift; sourceTree = "<group>"; };
+		1070497F2A4DEE260060C8D2 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		107049832A4DF0CD0060C8D2 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 		FC1248EF29FFEFC9006A5668 /* Read and Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Read and Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Read_and_LearnApp.swift; sourceTree = "<group>"; };
 		FC1248F429FFEFC9006A5668 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -28,7 +62,6 @@
 		FC1248F929FFEFCA006A5668 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC12490129FFF065006A5668 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FC12490329FFF08F006A5668 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
-		FC12490629FFF20C006A5668 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 		FC1D5FD22A28C5EE0056413A /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		FC1D5FD42A28C6060056413A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		FC7B9F8329FFF8A5003DC39A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -41,16 +74,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC12490929FFF262006A5668 /* DesignSystem in Frameworks */,
+				107049712A4DE5DC0060C8D2 /* WrappingHStack in Frameworks */,
+				100D63A42A4854F500A67C4F /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100D63A52A4857D600A67C4F /* Recording View */ = {
+			isa = PBXGroup;
+			children = (
+				100D63A92A4857FE00A67C4F /* AudioPlayer.swift */,
+				100D63A82A4857FE00A67C4F /* AudioRecorder.swift */,
+				100D63AA2A4857FE00A67C4F /* RecodingView.swift */,
+				100D63A72A4857FE00A67C4F /* Extensions.swift */,
+				100D63A62A4857FE00A67C4F /* Helper.swift */,
+				100D63AB2A4857FE00A67C4F /* RecordingDataModel.swift */,
+				100D63AC2A4857FE00A67C4F /* RecordingsList.swift */,
+			);
+			path = "Recording View";
+			sourceTree = "<group>";
+		};
+		107049722A4DED440060C8D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				107049732A4DED5E0060C8D2 /* DictionaryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		107049752A4DEDE70060C8D2 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1070497D2A4DEE1E0060C8D2 /* APIRequests */,
+				107049762A4DEDF40060C8D2 /* API Client */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		107049762A4DEDF40060C8D2 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				107049782A4DEE140060C8D2 /* APIError.swift */,
+				107049792A4DEE150060C8D2 /* CombineAPIClient.swift */,
+				107049772A4DEE140060C8D2 /* HTTPStatusCode.swift */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		1070497D2A4DEE1E0060C8D2 /* APIRequests */ = {
+			isa = PBXGroup;
+			children = (
+				1070497F2A4DEE260060C8D2 /* APIRequest.swift */,
+				1070497E2A4DEE260060C8D2 /* DictionaryAPIRequest.swift */,
+			);
+			path = APIRequests;
+			sourceTree = "<group>";
+		};
+		107049822A4DF0B30060C8D2 /* Dictionary View */ = {
+			isa = PBXGroup;
+			children = (
+				107049832A4DF0CD0060C8D2 /* DictionaryView.swift */,
+				107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */,
+			);
+			path = "Dictionary View";
+			sourceTree = "<group>";
+		};
 		FC1248E629FFEFC9006A5668 = {
 			isa = PBXGroup;
 			children = (
-				FC12490529FFF20C006A5668 /* Packages */,
 				FC1248F129FFEFC9006A5668 /* Read and Learn */,
 				FC1248F029FFEFC9006A5668 /* Products */,
 				FC12490729FFF262006A5668 /* Frameworks */,
@@ -68,6 +161,9 @@
 		FC1248F129FFEFC9006A5668 /* Read and Learn */ = {
 			isa = PBXGroup;
 			children = (
+				107049752A4DEDE70060C8D2 /* NetworkLayer */,
+				107049722A4DED440060C8D2 /* Model */,
+				100D63A52A4857D600A67C4F /* Recording View */,
 				FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */,
 				FC12490029FFF057006A5668 /* MainView */,
 				FC1248F629FFEFCA006A5668 /* Assets.xcassets */,
@@ -87,6 +183,7 @@
 		FC12490029FFF057006A5668 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				107049822A4DF0B30060C8D2 /* Dictionary View */,
 				FC1D5FD12A28C5E20056413A /* Details View */,
 				FC7B9F8229FFF899003DC39A /* HomeView */,
 				FC1248F429FFEFC9006A5668 /* MainView.swift */,
@@ -94,14 +191,6 @@
 				FC12490329FFF08F006A5668 /* TabBarItem.swift */,
 			);
 			path = MainView;
-			sourceTree = "<group>";
-		};
-		FC12490529FFF20C006A5668 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				FC12490629FFF20C006A5668 /* DesignSystem */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		FC12490729FFF262006A5668 /* Frameworks */ = {
@@ -115,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				FC1D5FD22A28C5EE0056413A /* DetailsViewModel.swift */,
+				1070496A2A4DC8B70060C8D2 /* synth.swift */,
 				FC1D5FD42A28C6060056413A /* DetailsView.swift */,
 			);
 			path = "Details View";
@@ -147,6 +237,8 @@
 			name = "Read and Learn";
 			packageProductDependencies = (
 				FC12490829FFF262006A5668 /* DesignSystem */,
+				100D63A32A4854F500A67C4F /* DesignSystem */,
+				107049702A4DE5DC0060C8D2 /* WrappingHStack */,
 			);
 			productName = "Read and Learn";
 			productReference = FC1248EF29FFEFC9006A5668 /* Read and Learn.app */;
@@ -176,6 +268,10 @@
 				Base,
 			);
 			mainGroup = FC1248E629FFEFC9006A5668;
+			packageReferences = (
+				100D63A22A4854F500A67C4F /* XCRemoteSwiftPackageReference "DesignSystem" */,
+				1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			productRefGroup = FC1248F029FFEFC9006A5668 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,9 +303,25 @@
 				FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */,
 				FC12490429FFF08F006A5668 /* TabBarItem.swift in Sources */,
 				FC1D5FD32A28C5EE0056413A /* DetailsViewModel.swift in Sources */,
+				100D63AF2A4857FE00A67C4F /* AudioRecorder.swift in Sources */,
+				107049862A4DF0E00060C8D2 /* DictionaryViewModel.swift in Sources */,
+				1070497A2A4DEE150060C8D2 /* HTTPStatusCode.swift in Sources */,
+				1070497C2A4DEE150060C8D2 /* CombineAPIClient.swift in Sources */,
+				100D63AE2A4857FE00A67C4F /* Extensions.swift in Sources */,
+				1070497B2A4DEE150060C8D2 /* APIError.swift in Sources */,
+				100D63AD2A4857FE00A67C4F /* Helper.swift in Sources */,
 				FC1D5FD52A28C6060056413A /* DetailsView.swift in Sources */,
+				100D63B22A4857FE00A67C4F /* RecordingDataModel.swift in Sources */,
 				FC7B9F8429FFF8A5003DC39A /* HomeView.swift in Sources */,
+				100D63B12A4857FE00A67C4F /* RecodingView.swift in Sources */,
+				1070496B2A4DC8B70060C8D2 /* synth.swift in Sources */,
+				100D63B32A4857FE00A67C4F /* RecordingsList.swift in Sources */,
+				107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */,
+				107049742A4DED5E0060C8D2 /* DictionaryModel.swift in Sources */,
+				107049812A4DEE260060C8D2 /* APIRequest.swift in Sources */,
 				FC12490229FFF065006A5668 /* MainViewModel.swift in Sources */,
+				100D63B02A4857FE00A67C4F /* AudioPlayer.swift in Sources */,
+				107049802A4DEE260060C8D2 /* DictionaryAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,14 +450,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Read and Learn/Preview Content\"";
-				DEVELOPMENT_TEAM = 5D3TFHKB64;
+				DEVELOPMENT_TEAM = 2YP97L48F7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to conduct recording sessions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,14 +485,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Read and Learn/Preview Content\"";
-				DEVELOPMENT_TEAM = 5D3TFHKB64;
+				DEVELOPMENT_TEAM = 2YP97L48F7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to conduct recording sessions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,7 +535,36 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		100D63A22A4854F500A67C4F /* XCRemoteSwiftPackageReference "DesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mohsenqaysi/DesignSystem";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ksemianov/WrappingHStack";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		100D63A32A4854F500A67C4F /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 100D63A22A4854F500A67C4F /* XCRemoteSwiftPackageReference "DesignSystem" */;
+			productName = DesignSystem;
+		};
+		107049702A4DE5DC0060C8D2 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
 		FC12490829FFF262006A5668 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;

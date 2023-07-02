@@ -10,6 +10,7 @@ import DesignSystem
 
 struct HomeView: View {
     @ObservedObject private var viewModel: HomeViewModel
+    @State private var showNavigationBar = true
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -23,6 +24,7 @@ struct HomeView: View {
                         VStack(alignment: .center) {
                             DetailsView(viewModel: DetailsViewModel(level: level))
                         }
+                        .toolbar(.hidden, for: .tabBar)
                         .navigationBarTitle("\(level.title) \(level.subTitle)", displayMode: .inline)
                     } label: {
                         cellView(level)

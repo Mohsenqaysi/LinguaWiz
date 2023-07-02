@@ -12,6 +12,7 @@ struct Read_and_LearnApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.light)
         }
     }
 }

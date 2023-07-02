@@ -38,7 +38,7 @@ struct MainView: View {
     func TabItemView(for tabItemView: TabBarItem) -> some View {
         switch tabItemView {
         case .home: HomeView(viewModel: viewModel.homeViewModel)
-        case .wordList: Text(tabItemView.title)
+        case .wordList: RecodingView(audioRecorder: AudioRecorder())
         case .practice: Text(tabItemView.title)
         case .profile: Text(tabItemView.title)
         }

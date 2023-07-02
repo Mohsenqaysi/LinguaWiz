@@ -7,39 +7,76 @@
 
 import SwiftUI
 import DesignSystem
+import WrappingHStack
 
 struct DetailsView: View {
     @ObservedObject private var viewModel: DetailsViewModel
+    @ObservedObject var audioRecorder: AudioRecorder
+    @ObservedObject private var synthVM: SynthViewModel
+   
+    @State var displayDictionarySheet: Bool = false
+
+    let data = (1...10).map { "Item \($0)" }
+    let columns = [
+        GridItem(.adaptive(minimum: 50))
+    ]
     
-    init(viewModel: DetailsViewModel) {
+    init(viewModel: DetailsViewModel,
+         audioRecorder: AudioRecorder = AudioRecorder(),
+         synthVM: SynthViewModel = SynthViewModel()
+    ) {
         self.viewModel = viewModel
+        self.audioRecorder = audioRecorder
+        self.synthVM = synthVM
     }
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 20) {
+            textPlaceHolderView
             ScrollView {
-                textPlaceHolderView
-                    .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(data, id: \.self) { item in
+                        Text(item)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 5)
+                            .background(.red)
+                            .cornerRadius(20)
+                    }
+                }
+                .padding(.horizontal)
             }
-            recordButtonView
-            checkButtonView
-            nextButtonView
+            .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
+                VStack(alignment: .center, spacing: 20) {
+                    HStack(alignment: .center, spacing: 10) {
+                        checkButtonView
+                        nextButtonView
+                    }
+                }
+                .padding()
+                .background(.white)
+            }
+            .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
+        }
+        .sheet(isPresented: $displayDictionarySheet) {
+            DictionaryView(viewModel: DictionaryViewModel(viewModel.selectedWord))
+        }
+        .onDisappear {
+            synthVM.stop()
         }
     }
 }
 
 extension DetailsView {
     private var textPlaceHolderView: some View {
-            
-            Image(viewModel.headerIcon)
-                .resizable()
-                .frame(height: 450)
-                .overlay(alignment: .center) {
-                    VStack(spacing: 5) {
-                        progressView
-                        textContainerView
-                    }
+        Image(viewModel.headerIcon)
+            .resizable()
+            .frame(height: 450)
+            .overlay(alignment: .center) {
+                VStack(spacing: 5) {
+                    progressView
+                    textContainerView
                 }
+            }
     }
     
     private var progressView: some View {
@@ -60,49 +97,84 @@ extension DetailsView {
                 .padding(.horizontal, 12)
                 .overlay(alignment: .center) {
                     textView
+                    buttonsView
                 }
-            playButtonView
         }
     }
     
     private var textView: some View {
         ScrollView {
-            Text(viewModel.readingsList[viewModel.index])
-                .foregroundColor(Palette.basicBlack.color)
-                .font(Typography.title3.font)
-                .multilineTextAlignment(.leading)
-                .padding(12)
-                .padding(.bottom, 60)
+            WrappingHStack(alignment: .leading) {
+                ForEach(Array(viewModel.readingsList[viewModel.index].toArray().enumerated()), id: \.offset) { id, word in
+                    Text(word)
+                        .id(id)
+                        .onTapGesture {
+                            print(word)
+                            displayDictionarySheet.toggle()
+                            viewModel.isSelected = id
+                            viewModel.selectedWord = word
+                        }
+                        .animation(.easeInOut(duration: 0.2), value: viewModel.isSelected)
+                        .foregroundColor(viewModel.isSelected == id ? .white : .black)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 10)
+                        .background(viewModel.isSelected == id ? Color.blue : .clear)
+                        .cornerRadius(16)
+                }
+            }
         }
-        .padding(8)
+        .padding(.horizontal, 12)
+        .padding(.bottom, 40)
     }
     
-    private var playButtonView: some View {
+    private var buttonsView: some View {
         Rectangle()
             .fill(Palette.backgroundOrangeLight.color)
             .frame(height: 73)
             .padding(.horizontal, 12)
             .overlay(alignment: .center) {
-                Button {
-                    // play button action
-                } label: {
-                    Image(viewModel.buttonIcon)
-                        .frame(width: 48, height: 43.35)
-                        .clipShape(Circle())
+                HStack(alignment: .center, spacing: 0) {
+                    Spacer()
+                    playButtonView
+                    Spacer()
+                    recordButtonView
+                    Spacer()
                 }
             }
-            .offset(y: -50)
+            .offset(y: 140)
+    }
+    
+    private var playButtonView: some View {
+        Button {
+            if synthVM.isSpeaking {
+                synthVM.stop()
+            } else {
+                synthVM.speak(text: viewModel.readingsList[viewModel.index])
+            }
+        } label: {
+            Image(systemName: synthVM.isSpeaking ? "pause.circle" : "play.circle")
+                .resizable()
+                .frame(width: 48, height: 48)
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(.green, .white)
+                .clipShape(Circle())
+                .animation(.spring(), value: synthVM.isSpeaking)
+        }
     }
     
     private var recordButtonView: some View {
         Button {
-            // play button action
+            audioRecorder.recording ? audioRecorder.stopRecording() : audioRecorder.startRecording()
         } label: {
-            Image(viewModel.recordButtonIcon)
+            Image(systemName: "mic.circle")
                 .resizable()
-                .frame(width: 80.14, height: 76.14)
+                .frame(width: 48, height: 48)
+                .symbolVariant(.circle.fill)
+                .foregroundStyle(.green, .white)
                 .clipShape(Circle())
         }
+        .disabled(synthVM.isSpeaking)
+        .opacity(synthVM.isSpeaking ? 0.5 : 1.0)
     }
     
     private var checkButtonView: some View {
@@ -122,6 +194,7 @@ extension DetailsView {
     
     private var nextButtonView: some View {
         Button {
+            synthVM.stop()
             print("maxValue: \(viewModel.maxValue)")
             if viewModel.index < viewModel.maxValue {
                 print("index: \(viewModel.index)")
@@ -134,7 +207,6 @@ extension DetailsView {
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)
                 .fixedSize(horizontal: false, vertical: true)
-//                .background(Palette.backgroundSunsetLightest.color)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
         }
@@ -148,3 +220,11 @@ struct DetailsView_Previews: PreviewProvider {
         DetailsView(viewModel: DetailsViewModel(level: Level("", subTitle: "", icon: "", unlocked: true)))
     }
 }
+
+extension String {
+    func toArray() -> [String] {
+        let array = self.components(separatedBy: " ")
+        return array
+    }
+}
+
