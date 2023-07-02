@@ -13,82 +13,95 @@ struct DictionaryView: View {
     @StateObject private var soundManager = SoundManager()
     @ObservedObject private var synthVM: SynthViewModel = SynthViewModel()
     
+    @Environment(\.dismiss) var dismiss
+    
     init(viewModel: DictionaryViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                if let dictionary = viewModel.dictionary {
-                    Text("\(dictionary.word) | \(dictionary.phonetic ?? "") | \(dictionary.meanings?.first?.partOfSpeech ?? "")")
-                        .foregroundColor(.black)
-                        .bold()
-                    if let meanings = dictionary.meanings {
-                        ForEach(meanings, id: \.partOfSpeech) { meaning in
-                            ForEach(Array(meaning.definitions.enumerated()), id: \.offset) { id, definition in
-                                Text("\(id+1): \(definition.definition)")
-                                    .foregroundColor(.black)
-                                if let example = definition.example {
-                                    Text("ex: \(example)")
-                                        .foregroundColor(.gray)
+        VStack {
+            HStack {
+                Spacer()
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .resizable()
+                        .frame(width: 36, height: 36)
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(.white, .black)
+                        .clipShape(Circle())
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 15)
+            ScrollView {
+                VStack(alignment: viewModel.dictionary != nil ? .leading : .center) {
+                    if let dictionary = viewModel.dictionary {
+                        Text("\(dictionary.word) | \(dictionary.phonetic ?? "") | \(dictionary.meanings?.first?.partOfSpeech ?? "")")
+                            .foregroundColor(.black)
+                            .bold()
+                        if let meanings = dictionary.meanings {
+                            ForEach(meanings, id: \.partOfSpeech) { meaning in
+                                ForEach(Array(meaning.definitions.enumerated()), id: \.offset) { id, definition in
+                                    Text("\(id+1): \(definition.definition)")
+                                        .foregroundColor(.black)
+                                    if let example = definition.example {
+                                        Text("ex: \(example)")
+                                            .foregroundColor(.gray)
+                                    }
                                 }
                             }
                         }
+                    } else {
+                        Text("Sorry no deifitions was found for <\(viewModel.word)>")
+                            .foregroundColor(.black)
+                            .bold()
                     }
                 }
-            }
-            .padding()
-            .padding(.bottom, 40)
-            .onAppear {
-                viewModel.fetchDeifintion()
+                .interactiveDismissDisabled()
+                .padding()
+                .padding(.bottom, 40)
+                .onAppear {
+                    viewModel.fetchDeifintion()
+                }
             }
         }
-        
         .overlay(alignment: .bottom) {
             buttonsView
-//            if let dictionary = viewModel.dictionary {
-//
-//                Button {
-//                    if synthVM.isSpeaking {
-//                        synthVM.stop()
-//                    } else {
-//                        synthVM.speak(text: dictionary.word)
-//                    }
-//                } label: {
-//                    Image(systemName: synthVM.isSpeaking ? "pause.circle" : "play.circle")
-//                        .resizable()
-//                        .frame(width: 48, height: 48)
-//                        .symbolVariant(.circle.fill)
-//                        .foregroundStyle(.white, .black)
-//                        .clipShape(Circle())
-//                }
-//            }
+                .edgesIgnoringSafeArea(.bottom)
+                .offset(y: 40)
         }
     }
     
     private var buttonsView: some View {
         Rectangle()
             .fill(.white)
-            .frame(height: 73)
-//            .padding(.horizontal, 12)
+            .frame(height: 120)
+        //            .padding(.horizontal, 12)
             .overlay(alignment: .center) {
-                if let dictionary = viewModel.dictionary {
-                    Button {
-                        if synthVM.isSpeaking {
-                            synthVM.stop()
-                        } else {
-                            synthVM.speak(text: dictionary.word)
+                VStack {
+                    if let dictionary = viewModel.dictionary {
+                        Button {
+                            if synthVM.isSpeaking {
+                                synthVM.stop()
+                            } else {
+                                synthVM.speak(text: dictionary.word)
+                            }
+                        } label: {
+                            Image(systemName: synthVM.isSpeaking ? "pause.circle" : "play.circle")
+                                .resizable()
+                                .animation(.easeInOut, value: synthVM.isSpeaking)
+                                .frame(width: 48, height: 48)
+                                .symbolVariant(.circle.fill)
+                                .foregroundStyle(.white, .black)
+                                .clipShape(Circle())
                         }
-                    } label: {
-                        Image(systemName: synthVM.isSpeaking ? "pause.circle" : "play.circle")
-                            .resizable()
-                            .frame(width: 48, height: 48)
-                            .symbolVariant(.circle.fill)
-                            .foregroundStyle(.white, .black)
-                            .clipShape(Circle())
                     }
+                    Spacer()
                 }
+                .padding()
             }
     }
     

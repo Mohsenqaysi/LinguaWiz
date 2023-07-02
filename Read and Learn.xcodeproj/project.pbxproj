@@ -25,6 +25,7 @@
 		107049812A4DEE260060C8D2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070497F2A4DEE260060C8D2 /* APIRequest.swift */; };
 		107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049832A4DF0CD0060C8D2 /* DictionaryView.swift */; };
 		107049862A4DF0E00060C8D2 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */; };
+		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
 		FC1248F529FFEFC9006A5668 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F429FFEFC9006A5668 /* MainView.swift */; };
 		FC1248F729FFEFCA006A5668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1248F629FFEFCA006A5668 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 			files = (
 				FC12490929FFF262006A5668 /* DesignSystem in Frameworks */,
 				107049712A4DE5DC0060C8D2 /* WrappingHStack in Frameworks */,
+				10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */,
 				100D63A42A4854F500A67C4F /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +241,7 @@
 				FC12490829FFF262006A5668 /* DesignSystem */,
 				100D63A32A4854F500A67C4F /* DesignSystem */,
 				107049702A4DE5DC0060C8D2 /* WrappingHStack */,
+				10FAAECE2A5234CE00CB547E /* AnimatedWaveform */,
 			);
 			productName = "Read and Learn";
 			productReference = FC1248EF29FFEFC9006A5668 /* Read and Learn.app */;
@@ -271,6 +274,7 @@
 			packageReferences = (
 				100D63A22A4854F500A67C4F /* XCRemoteSwiftPackageReference "DesignSystem" */,
 				1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				10FAAECD2A5234CE00CB547E /* XCRemoteSwiftPackageReference "AnimatedWaveform" */,
 			);
 			productRefGroup = FC1248F029FFEFC9006A5668 /* Products */;
 			projectDirPath = "";
@@ -552,6 +556,14 @@
 				kind = branch;
 			};
 		};
+		10FAAECD2A5234CE00CB547E /* XCRemoteSwiftPackageReference "AnimatedWaveform" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Wavemaster111188/AnimatedWaveform";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -564,6 +576,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
+		};
+		10FAAECE2A5234CE00CB547E /* AnimatedWaveform */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10FAAECD2A5234CE00CB547E /* XCRemoteSwiftPackageReference "AnimatedWaveform" */;
+			productName = AnimatedWaveform;
 		};
 		FC12490829FFF262006A5668 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -15,13 +15,9 @@ struct RecordingsList: View {
     var body: some View {
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
-//                if let urlsToDelete = audioRecorder.recordings.first?.fileURL {
-//                    deleteFiles([urlsToDelete])
-//                } else {
-                    RecordingRow(audioURL: recording.fileURL)
-//                }
+                RecordingRow(audioURL: recording.fileURL)
             }
-        .onDelete(perform: delete)
+            .onDelete(perform: delete)
         }
     }
     

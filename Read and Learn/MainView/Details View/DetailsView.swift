@@ -8,12 +8,13 @@
 import SwiftUI
 import DesignSystem
 import WrappingHStack
+import AnimatedWaveform
 
 struct DetailsView: View {
     @ObservedObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
-   
+    @ObservedObject private var audioPlayer = AudioPlayer()
     @State var displayDictionarySheet: Bool = false
 
     let data = (1...10).map { "Item \($0)" }
@@ -57,7 +58,9 @@ struct DetailsView: View {
             }
             .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
         }
-        .sheet(isPresented: $displayDictionarySheet) {
+        .sheet(isPresented: $displayDictionarySheet, onDismiss: {
+            viewModel.isSelected = nil
+        }) {
             DictionaryView(viewModel: DictionaryViewModel(viewModel.selectedWord))
         }
         .onDisappear {
@@ -104,7 +107,7 @@ extension DetailsView {
     
     private var textView: some View {
         ScrollView {
-            WrappingHStack(alignment: .leading) {
+            WrappingHStack(alignment: .leading, horizontalSpacing: 0, verticalSpacing: 0) {
                 ForEach(Array(viewModel.readingsList[viewModel.index].toArray().enumerated()), id: \.offset) { id, word in
                     Text(word)
                         .id(id)
@@ -116,15 +119,15 @@ extension DetailsView {
                         }
                         .animation(.easeInOut(duration: 0.2), value: viewModel.isSelected)
                         .foregroundColor(viewModel.isSelected == id ? .white : .black)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 10)
+                        .padding(.horizontal, 3)
+                        .padding(.vertical, 3)
                         .background(viewModel.isSelected == id ? Color.blue : .clear)
                         .cornerRadius(16)
                 }
             }
         }
         .padding(.horizontal, 12)
-        .padding(.bottom, 40)
+        .padding(.bottom, 80)
     }
     
     private var buttonsView: some View {
@@ -152,7 +155,7 @@ extension DetailsView {
                 synthVM.speak(text: viewModel.readingsList[viewModel.index])
             }
         } label: {
-            Image(systemName: synthVM.isSpeaking ? "pause.circle" : "play.circle")
+            Image(systemName: synthVM.isSpeaking ? "speaker.wave.2.circle.fill" : "speaker.circle")
                 .resizable()
                 .frame(width: 48, height: 48)
                 .symbolVariant(.circle.fill)
@@ -160,25 +163,72 @@ extension DetailsView {
                 .clipShape(Circle())
                 .animation(.spring(), value: synthVM.isSpeaking)
         }
+        .disabled(audioRecorder.recording)
+        .opacity(audioRecorder.recording ? 0.5 : 1.0)
     }
     
+    @ViewBuilder
     private var recordButtonView: some View {
-        Button {
-            audioRecorder.recording ? audioRecorder.stopRecording() : audioRecorder.startRecording()
-        } label: {
-            Image(systemName: "mic.circle")
-                .resizable()
-                .frame(width: 48, height: 48)
-                .symbolVariant(.circle.fill)
-                .foregroundStyle(.green, .white)
-                .clipShape(Circle())
+        HStack {
+            if audioRecorder.recordings.count > 0 {
+                Button {
+                    if let audioURL = audioRecorder.recordings.first?.fileURL {
+                        if audioPlayer.isPlaying == false {
+                            self.audioPlayer.startPlayback(audio: audioURL)
+                        } else {
+                            self.audioPlayer.stopPlayback()
+                        }
+                    }
+                } label: {
+                    Image(systemName: audioPlayer.isPlaying ? "pause.circle" : "play.circle")
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(.green, .white)
+                        .clipShape(Circle())
+                }
+                
+                Button {
+                    deleteCurrentAudio()
+                } label: {
+                    Image(systemName: "trash.circle")
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(.red, .white)
+                        .clipShape(Circle())
+                }
+            } else {
+                Button {
+                    audioRecorder.recording ? audioRecorder.stopRecording() : audioRecorder.startRecording()
+                } label: {
+                    if audioRecorder.recording {
+                        AnimatedWaveformView(color: .green, renderingMode: .palette, secondaryColor: .white)
+                            .frame(width: 48, height: 48)
+                            .symbolVariant(.circle.fill)
+                            .foregroundStyle(.green, .white)
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .animation(.spring(), value: synthVM.isSpeaking)
+                    } else {
+                        Image(systemName: "mic.circle")
+                            .resizable()
+                            .frame(width: 48, height: 48)
+                            .symbolVariant(.circle.fill)
+                            .foregroundStyle(.green, .white)
+                            .clipShape(Circle())
+                    }
+                }
+                .disabled(synthVM.isSpeaking)
+                .opacity(synthVM.isSpeaking ? 0.5 : 1.0)
+            }
         }
-        .disabled(synthVM.isSpeaking)
-        .opacity(synthVM.isSpeaking ? 0.5 : 1.0)
+        .animation(.linear(duration: 0.1), value: audioRecorder.recordings.count > 0)
     }
     
     private var checkButtonView: some View {
         Button {
+            deleteCurrentAudio()
         } label: {
             Text(viewModel.checkTitle)
                 .foregroundColor(Palette.basicBlack.color)
@@ -189,12 +239,25 @@ extension DetailsView {
                 .background(Palette.backgroundSunset.color)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
+                .disabled(audioRecorder.recordings.count > 0 ? false : true)
         }
+    }
+    
+    private func deleteCurrentAudio() {
+        rest()
+        if let audioURL = audioRecorder.recordings.first?.fileURL {
+            audioRecorder.deleteRecording(urlsToDelete: [audioURL])
+        }
+    }
+    
+    private func rest() {
+        viewModel.isSelected = nil
+        synthVM.stop()
     }
     
     private var nextButtonView: some View {
         Button {
-            synthVM.stop()
+            deleteCurrentAudio()
             print("maxValue: \(viewModel.maxValue)")
             if viewModel.index < viewModel.maxValue {
                 print("index: \(viewModel.index)")
@@ -227,4 +290,3 @@ extension String {
         return array
     }
 }
-

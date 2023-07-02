@@ -10,7 +10,7 @@ import Combine
 
 class DictionaryViewModel: ObservableObject {
     
-    private var word: String
+    private(set) var word: String
     var anyCancellable = Set<AnyCancellable>()
     @Published var dictionary: DictionaryModel?
     var apiClient: CombineAPIClient
@@ -21,7 +21,7 @@ class DictionaryViewModel: ObservableObject {
     }
     
     func fetchDeifintion() {
-        let reqquest = DictionaryAPIRequest(word)
+        let reqquest = DictionaryAPIRequest(word.withoutPunctuations)
         apiClient.execute(reqquest)
             .sink { completion in
                 switch completion {
@@ -35,5 +35,12 @@ class DictionaryViewModel: ObservableObject {
                 self?.dictionary = dictionary
             }
             .store(in: &anyCancellable)
+    }
+}
+
+extension String {
+    var withoutPunctuations: String {
+        var str = self.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
+        return str
     }
 }
