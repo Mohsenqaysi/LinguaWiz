@@ -16,6 +16,8 @@ struct DetailsView: View {
     @ObservedObject private var synthVM: SynthViewModel
     @ObservedObject private var audioPlayer = AudioPlayer()
     @State var displayDictionarySheet: Bool = false
+    
+    private var PSMamager =  PronunciationAssessmenMamager.shared
 
     let data = (1...10).map { "Item \($0)" }
     let columns = [
@@ -228,7 +230,10 @@ extension DetailsView {
     
     private var checkButtonView: some View {
         Button {
-            deleteCurrentAudio()
+            if let audioURL = audioRecorder.recordings.first?.fileURL {
+                PSMamager.pronunciationAssessmentWithStream(audioURL, referenceText: viewModel.readingsList[viewModel.index])
+            }
+//            deleteCurrentAudio()
         } label: {
             Text(viewModel.checkTitle)
                 .foregroundColor(Palette.basicBlack.color)

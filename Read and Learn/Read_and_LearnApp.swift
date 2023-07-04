@@ -36,7 +36,7 @@ struct Read_and_LearnApp: App {
                         .disabled(true)
                         .onReceive(timer) { _ in
                             timeSpent += 0.1
-                            print(String(format: "%.1f", timeSpent))
+//                            print(String(format: "%.1f", timeSpent))
                         }
                 }
                 .preferredColorScheme(.light)

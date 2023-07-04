@@ -40,7 +40,6 @@ class DictionaryViewModel: ObservableObject {
 
 extension String {
     var withoutPunctuations: String {
-        var str = self.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
-        return str
+        return self.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
     }
 }

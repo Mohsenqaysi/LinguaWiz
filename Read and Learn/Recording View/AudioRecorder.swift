@@ -41,13 +41,13 @@ class AudioRecorder: NSObject, ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("audio.m4a")
+        let audioFilename = documentPath.appendingPathComponent("audio.wav")
         
         let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+//            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.low.rawValue
         ]
         
         do {
@@ -56,7 +56,7 @@ class AudioRecorder: NSObject, ObservableObject {
 
             recording = true
         } catch {
-            print("Could not start recording")
+            print("Could not start recording: \(error.localizedDescription)")
         }
     }
     
