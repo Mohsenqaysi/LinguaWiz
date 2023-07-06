@@ -28,6 +28,7 @@
 		107853672A570F4100FE5B33 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853662A570F4100FE5B33 /* Word.swift */; };
 		1078536A2A570F9200FE5B33 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853692A570F9200FE5B33 /* StringExtensions.swift */; };
 		1078536D2A57120200FE5B33 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1078536C2A57120200FE5B33 /* ActivityIndicatorView */; };
+		1078536F2A57447500FE5B33 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1078536E2A57447400FE5B33 /* .gitignore */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		A76DD8289424B0E8066674B2 /* Pods_Read_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
@@ -62,6 +63,7 @@
 		107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 		107853662A570F4100FE5B33 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		107853692A570F9200FE5B33 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		1078536E2A57447400FE5B33 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9C59A0EC935A694CA9C07 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.release.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		FC1248F129FFEFC9006A5668 /* Read and Learn */ = {
 			isa = PBXGroup;
 			children = (
+				1078536E2A57447400FE5B33 /* .gitignore */,
 				107853682A570F7200FE5B33 /* Extensions */,
 				107049752A4DEDE70060C8D2 /* NetworkLayer */,
 				107049722A4DED440060C8D2 /* Model */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1248FA29FFEFCA006A5668 /* Preview Assets.xcassets in Resources */,
+				1078536F2A57447500FE5B33 /* .gitignore in Resources */,
 				FC1248F729FFEFCA006A5668 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
