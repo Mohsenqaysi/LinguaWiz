@@ -12,6 +12,7 @@ import AnimatedWaveform
 import ActivityIndicatorView
 
 struct DetailsView: View {
+    @AppStorage("savedErrorsList") var savedErrorsList: [String] = []
     @ObservedObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
@@ -109,6 +110,13 @@ extension DetailsView {
                             .frame(height: 50)
                             .background(.red)
                             .cornerRadius(8)
+                    }
+                }
+            }
+            .onAppear {
+                pronunciationMamager.errorsList.forEach {
+                    if !savedErrorsList.contains($0.word) {
+                        savedErrorsList.append($0.word)
                     }
                 }
             }

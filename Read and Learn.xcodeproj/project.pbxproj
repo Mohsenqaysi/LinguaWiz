@@ -29,6 +29,9 @@
 		1078536A2A570F9200FE5B33 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853692A570F9200FE5B33 /* StringExtensions.swift */; };
 		1078536D2A57120200FE5B33 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1078536C2A57120200FE5B33 /* ActivityIndicatorView */; };
 		1078536F2A57447500FE5B33 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1078536E2A57447400FE5B33 /* .gitignore */; };
+		107853712A5744F900FE5B33 /* ArrayExtesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853702A5744F900FE5B33 /* ArrayExtesnions.swift */; };
+		107853742A57454900FE5B33 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853732A57454900FE5B33 /* WordListView.swift */; };
+		107853772A574B6700FE5B33 /* PronunciationAssessmenMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		A76DD8289424B0E8066674B2 /* Pods_Read_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
@@ -64,6 +67,9 @@
 		107853662A570F4100FE5B33 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		107853692A570F9200FE5B33 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1078536E2A57447400FE5B33 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		107853702A5744F900FE5B33 /* ArrayExtesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtesnions.swift; sourceTree = "<group>"; };
+		107853732A57454900FE5B33 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
+		107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationAssessmenMamager.swift; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9C59A0EC935A694CA9C07 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.release.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,8 +167,25 @@
 			isa = PBXGroup;
 			children = (
 				107853692A570F9200FE5B33 /* StringExtensions.swift */,
+				107853702A5744F900FE5B33 /* ArrayExtesnions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		107853722A57453A00FE5B33 /* Practice View */ = {
+			isa = PBXGroup;
+			children = (
+				107853732A57454900FE5B33 /* WordListView.swift */,
+			);
+			path = "Practice View";
+			sourceTree = "<group>";
+		};
+		107853752A574B5C00FE5B33 /* Pronunciation Assessmen Mamager */ = {
+			isa = PBXGroup;
+			children = (
+				107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */,
+			);
+			path = "Pronunciation Assessmen Mamager";
 			sourceTree = "<group>";
 		};
 		9F94F8241E0175FA0FD7B3B7 /* Pods */ = {
@@ -195,6 +218,7 @@
 		FC1248F129FFEFC9006A5668 /* Read and Learn */ = {
 			isa = PBXGroup;
 			children = (
+				107853752A574B5C00FE5B33 /* Pronunciation Assessmen Mamager */,
 				1078536E2A57447400FE5B33 /* .gitignore */,
 				107853682A570F7200FE5B33 /* Extensions */,
 				107049752A4DEDE70060C8D2 /* NetworkLayer */,
@@ -219,6 +243,7 @@
 		FC12490029FFF057006A5668 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				107853722A57453A00FE5B33 /* Practice View */,
 				107049822A4DF0B30060C8D2 /* Dictionary View */,
 				FC1D5FD12A28C5E20056413A /* Details View */,
 				FC7B9F8229FFF899003DC39A /* HomeView */,
@@ -395,12 +420,15 @@
 				1070497C2A4DEE150060C8D2 /* CombineAPIClient.swift in Sources */,
 				100D63AE2A4857FE00A67C4F /* Extensions.swift in Sources */,
 				1070497B2A4DEE150060C8D2 /* APIError.swift in Sources */,
+				107853742A57454900FE5B33 /* WordListView.swift in Sources */,
 				100D63AD2A4857FE00A67C4F /* Helper.swift in Sources */,
 				FC1D5FD52A28C6060056413A /* DetailsView.swift in Sources */,
 				100D63B22A4857FE00A67C4F /* RecordingDataModel.swift in Sources */,
 				FC7B9F8429FFF8A5003DC39A /* HomeView.swift in Sources */,
 				100D63B12A4857FE00A67C4F /* RecodingView.swift in Sources */,
+				107853772A574B6700FE5B33 /* PronunciationAssessmenMamager.swift in Sources */,
 				1070496B2A4DC8B70060C8D2 /* synth.swift in Sources */,
+				107853712A5744F900FE5B33 /* ArrayExtesnions.swift in Sources */,
 				107853672A570F4100FE5B33 /* Word.swift in Sources */,
 				100D63B32A4857FE00A67C4F /* RecordingsList.swift in Sources */,
 				107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */,
