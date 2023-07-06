@@ -25,6 +25,9 @@
 		107049812A4DEE260060C8D2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070497F2A4DEE260060C8D2 /* APIRequest.swift */; };
 		107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049832A4DF0CD0060C8D2 /* DictionaryView.swift */; };
 		107049862A4DF0E00060C8D2 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */; };
+		107853672A570F4100FE5B33 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853662A570F4100FE5B33 /* Word.swift */; };
+		1078536A2A570F9200FE5B33 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853692A570F9200FE5B33 /* StringExtensions.swift */; };
+		1078536D2A57120200FE5B33 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1078536C2A57120200FE5B33 /* ActivityIndicatorView */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		A76DD8289424B0E8066674B2 /* Pods_Read_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
@@ -57,6 +60,8 @@
 		1070497F2A4DEE260060C8D2 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		107049832A4DF0CD0060C8D2 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
+		107853662A570F4100FE5B33 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		107853692A570F9200FE5B33 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9C59A0EC935A694CA9C07 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.release.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 				107049712A4DE5DC0060C8D2 /* WrappingHStack in Frameworks */,
 				10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */,
 				100D63A42A4854F500A67C4F /* DesignSystem in Frameworks */,
+				1078536D2A57120200FE5B33 /* ActivityIndicatorView in Frameworks */,
 				A76DD8289424B0E8066674B2 /* Pods_Read_and_Learn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				107049732A4DED5E0060C8D2 /* DictionaryModel.swift */,
+				107853662A570F4100FE5B33 /* Word.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +155,14 @@
 			path = "Dictionary View";
 			sourceTree = "<group>";
 		};
+		107853682A570F7200FE5B33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				107853692A570F9200FE5B33 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9F94F8241E0175FA0FD7B3B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +193,7 @@
 		FC1248F129FFEFC9006A5668 /* Read and Learn */ = {
 			isa = PBXGroup;
 			children = (
+				107853682A570F7200FE5B33 /* Extensions */,
 				107049752A4DEDE70060C8D2 /* NetworkLayer */,
 				107049722A4DED440060C8D2 /* Model */,
 				100D63A52A4857D600A67C4F /* Recording View */,
@@ -260,6 +276,7 @@
 				100D63A32A4854F500A67C4F /* DesignSystem */,
 				107049702A4DE5DC0060C8D2 /* WrappingHStack */,
 				10FAAECE2A5234CE00CB547E /* AnimatedWaveform */,
+				1078536C2A57120200FE5B33 /* ActivityIndicatorView */,
 			);
 			productName = "Read and Learn";
 			productReference = FC1248EF29FFEFC9006A5668 /* Read and Learn.app */;
@@ -293,6 +310,7 @@
 				100D63A22A4854F500A67C4F /* XCRemoteSwiftPackageReference "DesignSystem" */,
 				1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 				10FAAECD2A5234CE00CB547E /* XCRemoteSwiftPackageReference "AnimatedWaveform" */,
+				1078536B2A57120200FE5B33 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 			);
 			productRefGroup = FC1248F029FFEFC9006A5668 /* Products */;
 			projectDirPath = "";
@@ -379,12 +397,14 @@
 				FC7B9F8429FFF8A5003DC39A /* HomeView.swift in Sources */,
 				100D63B12A4857FE00A67C4F /* RecodingView.swift in Sources */,
 				1070496B2A4DC8B70060C8D2 /* synth.swift in Sources */,
+				107853672A570F4100FE5B33 /* Word.swift in Sources */,
 				100D63B32A4857FE00A67C4F /* RecordingsList.swift in Sources */,
 				107049842A4DF0CD0060C8D2 /* DictionaryView.swift in Sources */,
 				107049742A4DED5E0060C8D2 /* DictionaryModel.swift in Sources */,
 				107049812A4DEE260060C8D2 /* APIRequest.swift in Sources */,
 				FC12490229FFF065006A5668 /* MainViewModel.swift in Sources */,
 				100D63B02A4857FE00A67C4F /* AudioPlayer.swift in Sources */,
+				1078536A2A570F9200FE5B33 /* StringExtensions.swift in Sources */,
 				107049802A4DEE260060C8D2 /* DictionaryAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +638,14 @@
 				kind = branch;
 			};
 		};
+		1078536B2A57120200FE5B33 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.1;
+			};
+		};
 		10FAAECD2A5234CE00CB547E /* XCRemoteSwiftPackageReference "AnimatedWaveform" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Wavemaster111188/AnimatedWaveform";
@@ -638,6 +666,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1070496F2A4DE5DC0060C8D2 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
+		};
+		1078536C2A57120200FE5B33 /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1078536B2A57120200FE5B33 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
 		};
 		10FAAECE2A5234CE00CB547E /* AnimatedWaveform */ = {
 			isa = XCSwiftPackageProductDependency;

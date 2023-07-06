@@ -42,7 +42,7 @@ extension HomeViewModel {
 }
 
 // MARK: Titles
-extension HomeViewModel{}
+extension HomeViewModel {}
 
 // MARK: Icons
 extension HomeViewModel {

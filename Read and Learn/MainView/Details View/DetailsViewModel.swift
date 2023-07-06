@@ -22,12 +22,26 @@ class DetailsViewModel: ObservableObject {
 extension DetailsViewModel {
     var maxValue: Int { max(0, readingsList.count-1) }
     
+    var minValue: Int { min(0, readingsList.count-1) }
+
     var nextButtonTitle: String {
         return index < maxValue ? nextTitle : lastOneTitle
     }
     
     var isLastpassage: Bool {
         return index < maxValue ? false : true
+    }
+    
+    var isFirstpassage: Bool {
+        return index > minValue ? false : true
+    }
+    
+    var originalText: [String] {
+        return readingsList[index].toArray()
+    }
+    
+    var referenceText: String {
+        return readingsList[index]
     }
 
     var readingsList: [String] {
@@ -78,8 +92,10 @@ extension DetailsViewModel {
 extension DetailsViewModel {
     var checkTitle: String { "Check" }
     var nextTitle: String { "next" }
+    var previousTitle: String { "previous" }
     var lastOneTitle: String { "Last One" }
-
+    var lodingDataTitle: String { "Analysing Data ... Please Wait." }
+    var showResultTitle: String { "Show Result" }
 }
 
 // MARK: Icons

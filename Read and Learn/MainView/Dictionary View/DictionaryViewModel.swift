@@ -37,9 +37,3 @@ class DictionaryViewModel: ObservableObject {
             .store(in: &anyCancellable)
     }
 }
-
-extension String {
-    var withoutPunctuations: String {
-        return self.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
-    }
-}

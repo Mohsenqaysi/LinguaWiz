@@ -9,19 +9,21 @@ import SwiftUI
 import DesignSystem
 import WrappingHStack
 import AnimatedWaveform
+import ActivityIndicatorView
 
 struct DetailsView: View {
     @ObservedObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
     @ObservedObject private var audioPlayer = AudioPlayer()
+    @ObservedObject private var pronunciationMamager = PronunciationAssessmenMamager.shared
     @State var displayDictionarySheet: Bool = false
-    
-    private var PSMamager =  PronunciationAssessmenMamager.shared
+    @State var showResutl: Bool = false
 
-    let data = (1...10).map { "Item \($0)" }
-    let columns = [
-        GridItem(.adaptive(minimum: 50))
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
     
     init(viewModel: DetailsViewModel,
@@ -36,34 +38,36 @@ struct DetailsView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             textPlaceHolderView
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(data, id: \.self) { item in
-                        Text(item)
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 5)
-                            .background(.red)
-                            .cornerRadius(20)
-                    }
-                }
-                .padding(.horizontal)
-            }
+            Spacer()
+            showResultButtonView
+            Spacer()
             .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
                 VStack(alignment: .center, spacing: 20) {
-                    HStack(alignment: .center, spacing: 10) {
+                    HStack(alignment: .center, spacing: 5) {
                         checkButtonView
+                        previousButtonView
                         nextButtonView
                     }
                 }
-                .padding()
                 .background(.white)
             }
             .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
+        }
+        .foregroundColor(pronunciationMamager.loddedData ? .gray : .white)
+        .overlay(alignment: .top) {
+            activityIndicatorView
+        }
+        .sheet(isPresented: $showResutl) {
+            ResultView
         }
         .sheet(isPresented: $displayDictionarySheet, onDismiss: {
             viewModel.isSelected = nil
         }) {
             DictionaryView(viewModel: DictionaryViewModel(viewModel.selectedWord))
+                .presentationDetents([.medium, .large])
+        }
+        .onAppear {
+            deleteCurrentAudio()
         }
         .onDisappear {
             synthVM.stop()
@@ -72,6 +76,85 @@ struct DetailsView: View {
 }
 
 extension DetailsView {
+    
+    private var ResultView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("Result")
+                    .foregroundColor(Palette.basicBlack.color)
+                    .font(Typography.largeTitle.font)
+                Spacer()
+                Button {
+                    showResutl.toggle()
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .resizable()
+                        .frame(width: 36, height: 36)
+                        .symbolVariant(.circle.fill)
+                        .foregroundStyle(.white, .black)
+                        .clipShape(Circle())
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 15)
+            Divider()
+                .frame(height: 1)
+                .edgesIgnoringSafeArea(.horizontal)
+            pronunciationResultView
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(pronunciationMamager.errorsList, id: \.id) { word in
+                        Text(word.word)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .background(.red)
+                            .cornerRadius(8)
+                    }
+                }
+            }
+        }
+        .interactiveDismissDisabled()
+        .presentationDetents([.medium, .large])
+        .padding(.horizontal, 24)
+    }
+    private var showResultButtonView: some View {
+        Button(action: {
+            showResutl.toggle()
+        }, label: {
+            Text(viewModel.showResultTitle)
+                .foregroundColor(Palette.basicBlack.color)
+                .font(Typography.headlineSemiBold.font)
+                .frame(height: 60)
+                .frame(maxWidth: .infinity)
+                .fixedSize(horizontal: false, vertical: true)
+                .background(Palette.backgroundSunset.color)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .padding(.horizontal, 24)
+        })
+        .disabled(!pronunciationMamager.hasAssessmentResult)
+        .opacity(pronunciationMamager.hasAssessmentResult ? 1.0 : 0.0)
+    }
+    private var activityIndicatorView: some View {
+        ZStack(alignment: .center) {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(.black.opacity(0.5))
+                .frame(maxWidth: .infinity)
+                .frame(height: 150.0)
+            
+            VStack(alignment: .center, spacing: 12) {
+                Text(viewModel.lodingDataTitle)
+                    .foregroundColor(Palette.basicWhite.color)
+                    .font(Typography.bodySemiBold.font)
+            ActivityIndicatorView(isVisible: $pronunciationMamager.loddedData, type: .equalizer(count: 5))
+                .frame(width: 50.0, height: 50.0)
+                .foregroundColor(Palette.backgroundSunset.color)
+            }
+        }
+        .offset(y: 150)
+        .opacity(pronunciationMamager.loddedData ? 1.0 : 0.0)
+        .padding(.horizontal, 24)
+    }
+
     private var textPlaceHolderView: some View {
         Image(viewModel.headerIcon)
             .resizable()
@@ -82,6 +165,15 @@ extension DetailsView {
                     textContainerView
                 }
             }
+    }
+    
+    @ViewBuilder
+    private var pronunciationResultView: some View {
+        if let pronunciationResult = pronunciationMamager.pronunciationResult {
+            Text(pronunciationResult)
+                .foregroundColor(Palette.basicBlack.color)
+                .font(Typography.bodySemiBold.font)
+        }
     }
     
     private var progressView: some View {
@@ -110,21 +202,40 @@ extension DetailsView {
     private var textView: some View {
         ScrollView {
             WrappingHStack(alignment: .leading, horizontalSpacing: 0, verticalSpacing: 0) {
-                ForEach(Array(viewModel.readingsList[viewModel.index].toArray().enumerated()), id: \.offset) { id, word in
-                    Text(word)
-                        .id(id)
-                        .onTapGesture {
-                            print(word)
-                            displayDictionarySheet.toggle()
-                            viewModel.isSelected = id
-                            viewModel.selectedWord = word
-                        }
-                        .animation(.easeInOut(duration: 0.2), value: viewModel.isSelected)
-                        .foregroundColor(viewModel.isSelected == id ? .white : .black)
-                        .padding(.horizontal, 3)
-                        .padding(.vertical, 3)
-                        .background(viewModel.isSelected == id ? Color.blue : .clear)
-                        .cornerRadius(16)
+                if !pronunciationMamager.hasAssessmentResult {
+                    ForEach(Array(viewModel.originalText.enumerated()), id: \.offset) { id, word in
+                        Text(word)
+                            .id(id)
+                            .onTapGesture {
+                                print(word)
+                                displayDictionarySheet.toggle()
+                                viewModel.isSelected = id
+                                viewModel.selectedWord = word
+                            }
+                            .animation(.easeInOut(duration: 0.2), value: viewModel.isSelected)
+                            .foregroundColor(viewModel.isSelected == id ? .white : .black)
+                            .padding(.horizontal, 3)
+                            .padding(.vertical, 3)
+                            .background(viewModel.isSelected == id ? Color.blue : .clear)
+                            .cornerRadius(16)
+                    }
+                } else {
+                    ForEach(Array(pronunciationMamager.wordsList.enumerated()), id: \.offset) { id, word in
+                        Text(word.word)
+                            .id(id)
+                            .onTapGesture {
+                                print(word)
+                                displayDictionarySheet.toggle()
+                                viewModel.isSelected = id
+                                viewModel.selectedWord = word.word
+                            }
+                            .animation(.easeInOut(duration: 0.2), value: viewModel.isSelected)
+                            .foregroundColor(word.accuracyScore <= 50 ? .red : .green)
+                            .padding(.horizontal, 3)
+                            .padding(.vertical, 3)
+                            .background(viewModel.isSelected == id ? Color.blue : .clear)
+                            .cornerRadius(16)
+                    }
                 }
             }
         }
@@ -172,7 +283,7 @@ extension DetailsView {
     @ViewBuilder
     private var recordButtonView: some View {
         HStack {
-            if audioRecorder.recordings.count > 0 {
+            if !audioRecorder.recordings.isEmpty {
                 Button {
                     if let audioURL = audioRecorder.recordings.first?.fileURL {
                         if audioPlayer.isPlaying == false {
@@ -225,13 +336,14 @@ extension DetailsView {
                 .opacity(synthVM.isSpeaking ? 0.5 : 1.0)
             }
         }
-        .animation(.linear(duration: 0.1), value: audioRecorder.recordings.count > 0)
+        .animation(.linear(duration: 0.1), value: !audioRecorder.recordings.isEmpty)
     }
     
     private var checkButtonView: some View {
         Button {
+            rest()
             if let audioURL = audioRecorder.recordings.first?.fileURL {
-                PSMamager.pronunciationAssessmentWithStream(audioURL, referenceText: viewModel.readingsList[viewModel.index])
+                pronunciationMamager.pronunciationAssessmentWithStream(audioURL, referenceText: viewModel.referenceText)
             }
 //            deleteCurrentAudio()
         } label: {
@@ -244,8 +356,10 @@ extension DetailsView {
                 .background(Palette.backgroundSunset.color)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
-                .disabled(audioRecorder.recordings.count > 0 ? false : true)
         }
+        .disabled(audioRecorder.recordings.isEmpty || pronunciationMamager.hasAssessmentResult)
+        .opacity(audioRecorder.recordings.isEmpty || pronunciationMamager.hasAssessmentResult ? 0.5 : 1.0)
+        .animation(.easeOut(duration: 0.1), value: audioRecorder.recordings.isEmpty)
     }
     
     private func deleteCurrentAudio() {
@@ -256,6 +370,7 @@ extension DetailsView {
     }
     
     private func rest() {
+        pronunciationMamager.rest()
         viewModel.isSelected = nil
         synthVM.stop()
     }
@@ -270,7 +385,7 @@ extension DetailsView {
             }
         } label: {
             Text(viewModel.nextButtonTitle)
-                .foregroundColor(Palette.basicBlack.color.opacity(0.4))
+                .foregroundColor(Palette.basicBlack.color)
                 .font(Typography.headlineSemiBold.font)
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)
@@ -281,17 +396,35 @@ extension DetailsView {
         .disabled(viewModel.isLastpassage)
         .opacity(!viewModel.isLastpassage ? 1.0 : 0.4)
     }
+    
+    private var previousButtonView: some View {
+        Button {
+            deleteCurrentAudio()
+            print("minValue: \(viewModel.minValue)")
+            if viewModel.index >= viewModel.minValue {
+                print("index: \(viewModel.index)")
+                viewModel.index -= 1
+            }
+        } label: {
+            Text(viewModel.previousTitle)
+                .foregroundColor(Palette.basicBlack.color)
+                .font(Typography.headlineSemiBold.font)
+                .frame(height: 60)
+                .frame(maxWidth: .infinity)
+                .fixedSize(horizontal: false, vertical: true)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .padding(.horizontal, 24)
+        }
+//        .disabled(viewModel.isFirstpassage)
+//        .opacity(!viewModel.isFirstpassage ? 1.0 : 0.4)
+        
+        .disabled(viewModel.isFirstpassage || pronunciationMamager.hasAssessmentResult)
+        .opacity(viewModel.isFirstpassage || pronunciationMamager.hasAssessmentResult ? 0.4 : 1.0)
+    }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(viewModel: DetailsViewModel(level: Level("", subTitle: "", icon: "", unlocked: true)))
-    }
-}
-
-extension String {
-    func toArray() -> [String] {
-        let array = self.components(separatedBy: " ")
-        return array
     }
 }

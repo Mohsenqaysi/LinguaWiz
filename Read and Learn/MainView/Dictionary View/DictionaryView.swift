@@ -79,7 +79,6 @@ struct DictionaryView: View {
         Rectangle()
             .fill(.white)
             .frame(height: 120)
-        //            .padding(.horizontal, 12)
             .overlay(alignment: .center) {
                 VStack {
                     if let dictionary = viewModel.dictionary {
