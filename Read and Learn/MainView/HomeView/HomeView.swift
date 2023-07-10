@@ -81,9 +81,3 @@ extension HomeView {
         .padding(.horizontal, 24)
     }
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView(viewModel: HomeViewModel())
-    }
-}

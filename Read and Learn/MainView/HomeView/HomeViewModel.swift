@@ -6,12 +6,13 @@
 //
 
 import Foundation
+
 struct Level {
     let title: String
     let subTitle: String
     let icon: String
     let unlocked: Bool
-
+    
     init(_ title: String, subTitle: String, icon: String, unlocked: Bool) {
         self.title = title
         self.subTitle = subTitle
@@ -22,14 +23,15 @@ struct Level {
 
 
 class HomeViewModel: ObservableObject {
-
+    var level: Levels?
+    
     init() {}
 }
 
 // MARK: VARS
 extension HomeViewModel {
     var name: String {
-        return "Hi Amal, Welcome"
+        return "Hi their, welcome 😊"
     }
     var levels: [Level] {
         return [

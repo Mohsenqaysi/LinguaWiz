@@ -11,27 +11,31 @@ import DesignSystem
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
-    
+    let appStorageUserlevel = UserDefaults.standard.string(forKey: "appStorageUserlevel")
+
     var body: some View {
-        if viewModel.isLoggedIn {
+        if appStorageUserlevel != nil {
             TabView(selection: $viewModel.selectedTab) {
                 ForEach(TabBarItem.allCases, id: \.id) { item in
                     TabItemView(for: viewModel.selectedTab)
                         .tabItem {
-                            Image(item.icon)
-                                .renderingMode(.template)
-                                .background(viewModel.selectedTab == item ? Palette.backgroundSunset.color : Palette.basicWhite.color.opacity(0.5))
-                            Text(item.title)
-                                .foregroundColor(viewModel.selectedTab == item ? Palette.backgroundSunset.color : Palette.basicWhite.color.opacity(0.5))
+                            Label {
+                                Text(item.title)
+                                    .foregroundColor(viewModel.selectedTab == item ? Palette.backgroundSunset.color : Palette.basicWhite.color.opacity(0.5))
+                            } icon: {
+                                Image(item.icon)
+                                    .renderingMode(.template)
+                                    .background(viewModel.selectedTab == item ? Palette.backgroundSunset.color : Palette.basicWhite.color.opacity(0.5))
+                            }
+                            .id(item.id)
                         }
                         .toolbarBackground(.visible, for: .tabBar)
                         .toolbarBackground(Palette.basicWhite.color, for: .tabBar)
-                        .id(item)
                 }
             }
             .accentColor(Palette.backgroundSunset.color)
         } else {
-            //            LoginView(viewModel: viewModel.loginViewModel)
+            OnBordingView(viewModel.onBordingViewModel)
         }
     }
 
@@ -39,8 +43,12 @@ struct MainView: View {
     func TabItemView(for tabItemView: TabBarItem) -> some View {
         switch tabItemView {
         case .home: HomeView(viewModel: viewModel.homeViewModel)
-        case .wordList:  WordListView()
-        case .profile: Text(tabItemView.title)
+        case .wordList: WordListView()
+        case .profile: Button {
+            UserDefaults.standard.removeObject(forKey: "appStorageUserlevel")
+        } label: {
+            Text("Clear user data")
+        }
         }
     }
 }

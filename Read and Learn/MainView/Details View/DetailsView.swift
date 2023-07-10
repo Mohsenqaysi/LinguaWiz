@@ -20,12 +20,6 @@ struct DetailsView: View {
     @ObservedObject private var pronunciationMamager = PronunciationAssessmenMamager.shared
     @State var displayDictionarySheet: Bool = false
     @State var showResutl: Bool = false
-
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
     
     init(viewModel: DetailsViewModel,
          audioRecorder: AudioRecorder = AudioRecorder(),
@@ -42,24 +36,25 @@ struct DetailsView: View {
             Spacer()
             showResultButtonView
             Spacer()
-            .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
-                VStack(alignment: .center, spacing: 20) {
-                    HStack(alignment: .center, spacing: 5) {
-                        previousButtonView
-                        checkButtonView
-                        nextButtonView
+                .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
+                    VStack(alignment: .center, spacing: 20) {
+                        HStack(alignment: .center, spacing: 5) {
+                            previousButtonView
+                            checkButtonView
+                                .offset(y: -40)
+                            nextButtonView
+                        }
                     }
+                    .background(.white)
                 }
-                .background(.white)
-            }
-            .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
+                .navigationBarTitle("\(viewModel.title) \(viewModel.subTitle)", displayMode: .inline)
         }
         .foregroundColor(pronunciationMamager.loddedData ? .gray : .white)
         .overlay(alignment: .top) {
             activityIndicatorView
         }
         .sheet(isPresented: $showResutl) {
-            ResultView
+            ResultView(pronunciationMamager, showResutl: $showResutl)
         }
         .sheet(isPresented: $displayDictionarySheet, onDismiss: {
             viewModel.isSelected = nil
@@ -78,53 +73,6 @@ struct DetailsView: View {
 
 extension DetailsView {
     
-    private var ResultView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Result")
-                    .foregroundColor(Palette.basicBlack.color)
-                    .font(Typography.largeTitle.font)
-                Spacer()
-                Button {
-                    showResutl.toggle()
-                } label: {
-                    Image(systemName: "xmark.circle")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .symbolVariant(.circle.fill)
-                        .foregroundStyle(.white, .black)
-                        .clipShape(Circle())
-                }
-            }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 15)
-            Divider()
-                .frame(height: 1)
-                .edgesIgnoringSafeArea(.horizontal)
-            pronunciationResultView
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(pronunciationMamager.errorsList, id: \.id) { word in
-                        Text(word.word)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(.red)
-                            .cornerRadius(8)
-                    }
-                }
-            }
-            .onAppear {
-                pronunciationMamager.errorsList.forEach {
-                    if !savedErrorsList.contains($0.word) {
-                        savedErrorsList.append($0.word)
-                    }
-                }
-            }
-        }
-        .interactiveDismissDisabled()
-        .presentationDetents([.medium, .large])
-        .padding(.horizontal, 24)
-    }
     private var showResultButtonView: some View {
         Button(action: {
             showResutl.toggle()
@@ -153,16 +101,16 @@ extension DetailsView {
                 Text(viewModel.lodingDataTitle)
                     .foregroundColor(Palette.basicWhite.color)
                     .font(Typography.bodySemiBold.font)
-            ActivityIndicatorView(isVisible: $pronunciationMamager.loddedData, type: .equalizer(count: 5))
-                .frame(width: 50.0, height: 50.0)
-                .foregroundColor(Palette.backgroundSunset.color)
+                ActivityIndicatorView(isVisible: $pronunciationMamager.loddedData, type: .equalizer(count: 5))
+                    .frame(width: 50.0, height: 50.0)
+                    .foregroundColor(Palette.backgroundSunset.color)
             }
         }
         .offset(y: 150)
         .opacity(pronunciationMamager.loddedData ? 1.0 : 0.0)
         .padding(.horizontal, 24)
     }
-
+    
     private var textPlaceHolderView: some View {
         Image(viewModel.headerIcon)
             .resizable()
@@ -173,15 +121,6 @@ extension DetailsView {
                     textContainerView
                 }
             }
-    }
-    
-    @ViewBuilder
-    private var pronunciationResultView: some View {
-        if let pronunciationResult = pronunciationMamager.pronunciationResult {
-            Text(pronunciationResult)
-                .foregroundColor(Palette.basicBlack.color)
-                .font(Typography.bodySemiBold.font)
-        }
     }
     
     private var progressView: some View {
@@ -353,16 +292,16 @@ extension DetailsView {
             if let audioURL = audioRecorder.recordings.first?.fileURL {
                 pronunciationMamager.pronunciationAssessmentWithStream(audioURL, referenceText: viewModel.referenceText)
             }
-//            deleteCurrentAudio()
+            //            deleteCurrentAudio()
         } label: {
             Text(viewModel.checkTitle)
                 .foregroundColor(Palette.basicBlack.color)
                 .font(Typography.headlineSemiBold.font)
-                .frame(height: 60)
+                .frame(height: 80)
                 .frame(maxWidth: .infinity)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(Palette.backgroundSunset.color)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .clipShape(Circle())
                 .padding(.horizontal, 24)
         }
         .disabled(audioRecorder.recordings.isEmpty || pronunciationMamager.hasAssessmentResult)
@@ -423,16 +362,7 @@ extension DetailsView {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
         }
-//        .disabled(viewModel.isFirstpassage)
-//        .opacity(!viewModel.isFirstpassage ? 1.0 : 0.4)
-        
         .disabled(viewModel.isFirstpassage || pronunciationMamager.hasAssessmentResult)
         .opacity(viewModel.isFirstpassage || pronunciationMamager.hasAssessmentResult ? 0.4 : 1.0)
-    }
-}
-
-struct DetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailsView(viewModel: DetailsViewModel(level: Level("", subTitle: "", icon: "", unlocked: true)))
     }
 }
