@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Read and Learn/Pods-Read and Learn-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Differ/Differ.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MicrosoftCognitiveServicesSpeech-iOS/MicrosoftCognitiveServicesSpeech.framework/MicrosoftCognitiveServicesSpeech

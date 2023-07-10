@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "activityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/ActivityIndicatorView",
+      "state" : {
+        "revision" : "9970fd0bb7a05dad0b6566ae1f56937716686b24",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "animatedwaveform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Wavemaster111188/AnimatedWaveform",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9c62012ab61afc58c34c5b545bc381d09760ed1d"
+      }
+    },
+    {
+      "identity" : "designsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Mohsenqaysi/DesignSystem",
+      "state" : {
+        "branch" : "main",
+        "revision" : "09940e0b8cdc2cd31769d2d68c3842a96de5fff2"
+      }
+    },
+    {
+      "identity" : "wrappinghstack",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ksemianov/WrappingHStack",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2638bc5258607e8a32f2e5675d075896c2401678"
+      }
+    }
+  ],
+  "version" : 2
+}

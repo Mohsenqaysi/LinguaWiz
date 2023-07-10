@@ -20,7 +20,7 @@ class PronunciationAssessmenMamager: ObservableObject {
     var sub: String
     var region: String
     
-    private init(sub: String = "7c77d3804ac4405e8754ec15ad393e55", region: String = "eastus") {
+    private init(sub: String = "1bbef2e22b60439d8ecdc6b25ebc9897", region: String = "eastus") {
         self.sub = sub
         self.region = region
     }
@@ -42,18 +42,9 @@ class PronunciationAssessmenMamager: ObservableObject {
             print("referenceText: \(referenceText)")
             print("pronunciation assessment audio file path: ", path.absoluteString)
             
-//            let bundle = Bundle.main
-//            let path = bundle.path(forResource: "whatstheweatherlike", ofType: "wav")
-//            if (path == nil) {
-//                print("Cannot find audio file!")
-//                return
-//            }
-//            print("pronunciation assessment audio file path: ", path)
-            
             
             let speechConfig = try SPXSpeechConfiguration(subscription: sub, region: region)
             let audioDataWithHeader = try Data(contentsOf: path)
-//            let audioDataWithHeader = try Data(contentsOf: URL(fileURLWithPath: path!))
             
             let audioData = Array(audioDataWithHeader[46..<audioDataWithHeader.count])
             let startTime = Date()
@@ -95,13 +86,10 @@ class PronunciationAssessmenMamager: ObservableObject {
                 
                 if let words = pronunciationResult.words {
                     for word in words {
-//                        let wordString = word.word ?? ""
-//                        let errorType = word.errorType ?? ""
                         
                         guard let wordString = word.word,
                               let errorType = word.errorType else { return }
                         let wordResult = Word(word: wordString, errorType: errorType, accuracyScore: word.accuracyScore)
-//                        print(wordResult)
                         DispatchQueue.main.async {
                             self?.pronunciationResult = resultText
                             if errorType != "Insertion" {

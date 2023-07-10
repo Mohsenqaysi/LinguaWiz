@@ -36,7 +36,6 @@ struct WordListView: View {
                 }
             }
             .navigationTitle("Word List")
-            .padding(.top, 50)
             .padding(.horizontal, 24)
         }
     }

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6B7EB759-D7C3-4AF1-880F-CAA09096B930"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE07A4B5-A682-4873-8053-078FE77644CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "checkButtonView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20C49A5E-83EF-4F91-9265-311536ABAEE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
+            landmarkName = "checkButtonView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A95451B2-A2C2-4859-B99C-6FEC3B541C3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "textView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A95451B2-A2C2-4859-B99C-6FEC3B541C3B - 915a39d64d527b20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "A95451B2-A2C2-4859-B99C-6FEC3B541C3B - aae0d4867e52ecc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, Swift.String) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "732">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D62E8F86-C21C-46F9-99B0-4BBC5C2DF384"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "textView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D62E8F86-C21C-46F9-99B0-4BBC5C2DF384 - 915a39d64d527b43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "D62E8F86-C21C-46F9-99B0-4BBC5C2DF384 - 915a39d64d527b43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "D62E8F86-C21C-46F9-99B0-4BBC5C2DF384 - 915a39d64d5271c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "608">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "textView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14 - 915a39d64d527911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "1576">
+               </Location>
+               <Location
+                  uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14 - 8ca24ea3e2c7a719"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int, Read_and_Learn.Word) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14 - 915a39d64d527911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "1756">
+               </Location>
+               <Location
+                  uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14 - 915a39d64d52779f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "1576">
+               </Location>
+               <Location
+                  uuid = "890D91C5-8E1A-4ED8-9A01-D1D540192C14 - 8ca24ea3e2c7a893"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int, Read_and_Learn.Word) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6ACF99E-9A6D-4B7E-B643-645F8B426E05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "textView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D6ACF99E-9A6D-4B7E-B643-645F8B426E05 - 8ca24ea3e2c7a719"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int, Read_and_Learn.Word) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "D6ACF99E-9A6D-4B7E-B643-645F8B426E05 - 8ca24ea3e2c7a893"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int, Read_and_Learn.Word) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Read_and_Learn.Word)&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.Layout.callAsFunction&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(() -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Read_and_Learn.DetailsView.textView.getter : some"
+                  moduleName = "Read and Learn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amalali/Downloads/Read-and-Learn/Read%20and%20Learn/MainView/Details%20View/DetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F48FB233-FBF9-4CCC-BA20-99AE59179719"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Read and Learn/MainView/Details View/DetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "ResultView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -45,8 +45,8 @@ struct DetailsView: View {
             .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
                 VStack(alignment: .center, spacing: 20) {
                     HStack(alignment: .center, spacing: 5) {
-                        checkButtonView
                         previousButtonView
+                        checkButtonView
                         nextButtonView
                     }
                 }

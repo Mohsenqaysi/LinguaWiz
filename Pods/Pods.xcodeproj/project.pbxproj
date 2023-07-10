@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		97D3B6926BF0A2ABAB7F043559FA98A9 /* MicrosoftCognitiveServicesSpeech-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A086A6A8E0A37DD0FC892F865802DB64 /* Build configuration list for PBXAggregateTarget "MicrosoftCognitiveServicesSpeech-iOS" */;
+			buildPhases = (
+				A68FA835EC2580FD50EC4E720D5DC8EB /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = "MicrosoftCognitiveServicesSpeech-iOS";
+			productName = "MicrosoftCognitiveServicesSpeech-iOS";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		03CE5BFF21269812D3842ABED2DCBB67 /* GenericPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BC01CD04CEA06E90F6A665680B220 /* GenericPatch.swift */; };
+		0524AA8E4E9421B15F53AF7CF9367DEB /* ExtendedPatch+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420CF1B958C236B4247F2AEC749086F6 /* ExtendedPatch+Apply.swift */; };
+		0D70593BF93768CA26BE7AD6341971DE /* Pods-Read and Learn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC52B695A6FEFA0158ED5FF0CCEAF233 /* Pods-Read and Learn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18D6D6FDC8C94EAD2122B1E6BA82259E /* BatchUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD2CC24E17F63BB394383DCAC6C549 /* BatchUpdate.swift */; };
+		294B9B7875575890DB0CBBBC19044190 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57AB0658FAF8F5C30B620643765BCC8 /* ExtendedPatch.swift */; };
+		2CC145FFD766D9C9B8AEF56D5F6552C7 /* Pods-Read and Learn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E610959799A9DF69DB3A71D60004012 /* Pods-Read and Learn-dummy.m */; };
+		3661257520FBC2AA98ECED1D51278FC7 /* Diff+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB4BCDAC7DE43FD4DE57A10E245FF4 /* Diff+UIKit.swift */; };
+		3EEC85CDDB842FAC5D7CBC05E6002C71 /* Patch+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A476ADC7124B9F85BD315E32A2D301 /* Patch+Sort.swift */; };
+		4AE599BC22C3744DAB14AA3B8B885B06 /* Differ-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A26789FE403016813DEC9B99C27E9B4 /* Differ-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D5B9D8852758E56F36CFB62732F6E88 /* ExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0709E162F94B13B7994DCCA0B0D52C /* ExtendedDiff.swift */; };
+		6D88643AE03BC1A98ACFF7DBBC29A4CB /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B779EE3E8A79DF4D4C4B2FDE7826427 /* Patch.swift */; };
+		6E1942ECAAA4EF4CE294ECCF5551A7F0 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850A11314EA74A87ACF86ACB534A422 /* Diff.swift */; };
+		71A7914706235EF03A2FFB7D587F6CBF /* NestedBatchUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D624DE3030F5A672C1E495F0AE2C7C /* NestedBatchUpdate.swift */; };
+		786C7860D2323FD490F012BF3AB1786B /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C293AF38490359C3093BD8753B26F14 /* NestedExtendedDiff.swift */; };
+		AA5D0573B87902FC382627C34EC86592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B2428A3AB7DDBEC68EFFC2D32FDC506A /* Patch+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC034811674685AE0B7EB8BFA48A108 /* Patch+Apply.swift */; };
+		C4055DAAECCC6BC18CFA9120CE064392 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9F307268164DA6CA716CEEE7E90B1 /* LinkedList.swift */; };
+		F36FCD75FAFE0BF42C23F82ED2A6CBA0 /* Differ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39B480D38E3D46DB617435EAA9A500 /* Differ-dummy.m */; };
+		FB70752EE64D94180DDD5C279B46B82C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FC954850572BD282F23B5FD737C6A06D /* NestedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9166BE874E75072868CB04F9C406B1 /* NestedDiff.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2422A9B3302281E6431F18DC1B5BADB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A325783180C9BEB3D60A7CAD046D1CF8;
+			remoteInfo = Differ;
+		};
+		E526EF290D79CDF2873ED5014B767359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97D3B6926BF0A2ABAB7F043559FA98A9;
+			remoteInfo = "MicrosoftCognitiveServicesSpeech-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0774CCE0C46FFCE38BAAC37B18EDE5BA /* Differ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Differ.debug.xcconfig; sourceTree = "<group>"; };
+		0B0EA6A6EE3BBFE4084F95A12902F02D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
+		1A9166BE874E75072868CB04F9C406B1 /* NestedDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NestedDiff.swift; path = Sources/Differ/NestedDiff.swift; sourceTree = "<group>"; };
+		2D6CBCB4A922E07EAFD740551556D0B0 /* Pods-Read and Learn-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Read and Learn-frameworks.sh"; sourceTree = "<group>"; };
+		2E610959799A9DF69DB3A71D60004012 /* Pods-Read and Learn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Read and Learn-dummy.m"; sourceTree = "<group>"; };
+		3436D7C5225069490C685D77EB2E7F20 /* Differ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Differ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7BC01CD04CEA06E90F6A665680B220 /* GenericPatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericPatch.swift; path = Sources/Differ/GenericPatch.swift; sourceTree = "<group>"; };
+		3B779EE3E8A79DF4D4C4B2FDE7826427 /* Patch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Patch.swift; path = Sources/Differ/Patch.swift; sourceTree = "<group>"; };
+		3E1F2CF09CD4408D83CA7DE5622BF278 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
+		4051585A63DB3EF5DFEB9DC0FF46FA4D /* MicrosoftCognitiveServicesSpeech-iOS-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MicrosoftCognitiveServicesSpeech-iOS-xcframeworks.sh"; sourceTree = "<group>"; };
+		420CF1B958C236B4247F2AEC749086F6 /* ExtendedPatch+Apply.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ExtendedPatch+Apply.swift"; path = "Sources/Differ/ExtendedPatch+Apply.swift"; sourceTree = "<group>"; };
+		456A56C9B7F59C291980A451426943F2 /* Pods-Read and Learn-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Read and Learn-acknowledgements.markdown"; sourceTree = "<group>"; };
+		55109BF08B3ED861AFE035BDEDF2362C /* Differ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Differ.modulemap; sourceTree = "<group>"; };
+		5850A11314EA74A87ACF86ACB534A422 /* Diff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Diff.swift; path = Sources/Differ/Diff.swift; sourceTree = "<group>"; };
+		5C293AF38490359C3093BD8753B26F14 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NestedExtendedDiff.swift; path = Sources/Differ/NestedExtendedDiff.swift; sourceTree = "<group>"; };
+		66C815293424E51063EBAD23C40BD398 /* Pods-Read and Learn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Read and Learn-Info.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A26789FE403016813DEC9B99C27E9B4 /* Differ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Differ-umbrella.h"; sourceTree = "<group>"; };
+		80A476ADC7124B9F85BD315E32A2D301 /* Patch+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Patch+Sort.swift"; path = "Sources/Differ/Patch+Sort.swift"; sourceTree = "<group>"; };
+		817FAD701189C8113A2392A4D7D2C890 /* Pods-Read and Learn-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Read and Learn-acknowledgements.plist"; sourceTree = "<group>"; };
+		89D624DE3030F5A672C1E495F0AE2C7C /* NestedBatchUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NestedBatchUpdate.swift; path = Sources/Differ/NestedBatchUpdate.swift; sourceTree = "<group>"; };
+		8CC034811674685AE0B7EB8BFA48A108 /* Patch+Apply.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Patch+Apply.swift"; path = "Sources/Differ/Patch+Apply.swift"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E22B8FA989A98900C173D11700000DE /* MicrosoftCognitiveServicesSpeech-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MicrosoftCognitiveServicesSpeech-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A22C9BCBD3D7FEB1A4B4F5330136A9CD /* Differ-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Differ-Info.plist"; sourceTree = "<group>"; };
+		A7FD2CC24E17F63BB394383DCAC6C549 /* BatchUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BatchUpdate.swift; path = Sources/Differ/BatchUpdate.swift; sourceTree = "<group>"; };
+		AA39B480D38E3D46DB617435EAA9A500 /* Differ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Differ-dummy.m"; sourceTree = "<group>"; };
+		B1B717BF90BCBEE6732BB209195D8E92 /* Pods-Read and Learn */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Read and Learn"; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1848C8EC802C383B262C044211D6E51 /* MicrosoftCognitiveServicesSpeech-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MicrosoftCognitiveServicesSpeech-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D6044B37E89489ACDEE8367E05AC24C6 /* Differ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Differ-prefix.pch"; sourceTree = "<group>"; };
+		E5CB4BCDAC7DE43FD4DE57A10E245FF4 /* Diff+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Diff+UIKit.swift"; path = "Sources/Differ/Diff+UIKit.swift"; sourceTree = "<group>"; };
+		EB0709E162F94B13B7994DCCA0B0D52C /* ExtendedDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtendedDiff.swift; path = Sources/Differ/ExtendedDiff.swift; sourceTree = "<group>"; };
+		EBF9F307268164DA6CA716CEEE7E90B1 /* LinkedList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = Sources/Differ/LinkedList.swift; sourceTree = "<group>"; };
+		ED77CF80C0E97583F4A2C6BF5BC3FB3A /* Pods-Read and Learn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Read and Learn.modulemap"; sourceTree = "<group>"; };
+		F0D6E7D0540D4D3F81141BD60D76D6AD /* Differ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Differ.release.xcconfig; sourceTree = "<group>"; };
+		F57AB0658FAF8F5C30B620643765BCC8 /* ExtendedPatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtendedPatch.swift; path = Sources/Differ/ExtendedPatch.swift; sourceTree = "<group>"; };
+		F69946D98C1E302250C260FD54F1B78F /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = MicrosoftCognitiveServicesSpeech.xcframework; sourceTree = "<group>"; };
+		FC52B695A6FEFA0158ED5FF0CCEAF233 /* Pods-Read and Learn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Read and Learn-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03F62C120418EB02BC0B69A2EBB85B2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB70752EE64D94180DDD5C279B46B82C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C421C278B5677F5417D400E32169C76A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5D0573B87902FC382627C34EC86592 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		143420D1EC9FE7DAD903F1988065B8AF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C043613E4BF953C2585CB67990E4635B /* Pods-Read and Learn */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		53EA4F071483E84249FE4FF16B29AED8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				951ECCDE4410B114F24743251DB8CD8E /* Differ */,
+				DB6F6787912E815ACEB9FE6294DDBE71 /* MicrosoftCognitiveServicesSpeech-iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		71B32DF308C11FCBFB0356F63CE6D202 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				55109BF08B3ED861AFE035BDEDF2362C /* Differ.modulemap */,
+				AA39B480D38E3D46DB617435EAA9A500 /* Differ-dummy.m */,
+				A22C9BCBD3D7FEB1A4B4F5330136A9CD /* Differ-Info.plist */,
+				D6044B37E89489ACDEE8367E05AC24C6 /* Differ-prefix.pch */,
+				7A26789FE403016813DEC9B99C27E9B4 /* Differ-umbrella.h */,
+				0774CCE0C46FFCE38BAAC37B18EDE5BA /* Differ.debug.xcconfig */,
+				F0D6E7D0540D4D3F81141BD60D76D6AD /* Differ.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Differ";
+			sourceTree = "<group>";
+		};
+		951ECCDE4410B114F24743251DB8CD8E /* Differ */ = {
+			isa = PBXGroup;
+			children = (
+				A7FD2CC24E17F63BB394383DCAC6C549 /* BatchUpdate.swift */,
+				5850A11314EA74A87ACF86ACB534A422 /* Diff.swift */,
+				E5CB4BCDAC7DE43FD4DE57A10E245FF4 /* Diff+UIKit.swift */,
+				EB0709E162F94B13B7994DCCA0B0D52C /* ExtendedDiff.swift */,
+				F57AB0658FAF8F5C30B620643765BCC8 /* ExtendedPatch.swift */,
+				420CF1B958C236B4247F2AEC749086F6 /* ExtendedPatch+Apply.swift */,
+				3A7BC01CD04CEA06E90F6A665680B220 /* GenericPatch.swift */,
+				EBF9F307268164DA6CA716CEEE7E90B1 /* LinkedList.swift */,
+				89D624DE3030F5A672C1E495F0AE2C7C /* NestedBatchUpdate.swift */,
+				1A9166BE874E75072868CB04F9C406B1 /* NestedDiff.swift */,
+				5C293AF38490359C3093BD8753B26F14 /* NestedExtendedDiff.swift */,
+				3B779EE3E8A79DF4D4C4B2FDE7826427 /* Patch.swift */,
+				8CC034811674685AE0B7EB8BFA48A108 /* Patch+Apply.swift */,
+				80A476ADC7124B9F85BD315E32A2D301 /* Patch+Sort.swift */,
+				71B32DF308C11FCBFB0356F63CE6D202 /* Support Files */,
+			);
+			path = Differ;
+			sourceTree = "<group>";
+		};
+		BBC3B01AEA2EBE01E4FF5EDD90C3C778 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4051585A63DB3EF5DFEB9DC0FF46FA4D /* MicrosoftCognitiveServicesSpeech-iOS-xcframeworks.sh */,
+				C1848C8EC802C383B262C044211D6E51 /* MicrosoftCognitiveServicesSpeech-iOS.debug.xcconfig */,
+				9E22B8FA989A98900C173D11700000DE /* MicrosoftCognitiveServicesSpeech-iOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MicrosoftCognitiveServicesSpeech-iOS";
+			sourceTree = "<group>";
+		};
+		C043613E4BF953C2585CB67990E4635B /* Pods-Read and Learn */ = {
+			isa = PBXGroup;
+			children = (
+				ED77CF80C0E97583F4A2C6BF5BC3FB3A /* Pods-Read and Learn.modulemap */,
+				456A56C9B7F59C291980A451426943F2 /* Pods-Read and Learn-acknowledgements.markdown */,
+				817FAD701189C8113A2392A4D7D2C890 /* Pods-Read and Learn-acknowledgements.plist */,
+				2E610959799A9DF69DB3A71D60004012 /* Pods-Read and Learn-dummy.m */,
+				2D6CBCB4A922E07EAFD740551556D0B0 /* Pods-Read and Learn-frameworks.sh */,
+				66C815293424E51063EBAD23C40BD398 /* Pods-Read and Learn-Info.plist */,
+				FC52B695A6FEFA0158ED5FF0CCEAF233 /* Pods-Read and Learn-umbrella.h */,
+				0B0EA6A6EE3BBFE4084F95A12902F02D /* Pods-Read and Learn.debug.xcconfig */,
+				3E1F2CF09CD4408D83CA7DE5622BF278 /* Pods-Read and Learn.release.xcconfig */,
+			);
+			name = "Pods-Read and Learn";
+			path = "Target Support Files/Pods-Read and Learn";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				53EA4F071483E84249FE4FF16B29AED8 /* Pods */,
+				DB087B0653FE99EF7A7943A83294A359 /* Products */,
+				143420D1EC9FE7DAD903F1988065B8AF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB087B0653FE99EF7A7943A83294A359 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3436D7C5225069490C685D77EB2E7F20 /* Differ.framework */,
+				B1B717BF90BCBEE6732BB209195D8E92 /* Pods-Read and Learn */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB6F6787912E815ACEB9FE6294DDBE71 /* MicrosoftCognitiveServicesSpeech-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FABC428A3975B2A576C7BDBC43047A11 /* Frameworks */,
+				BBC3B01AEA2EBE01E4FF5EDD90C3C778 /* Support Files */,
+			);
+			path = "MicrosoftCognitiveServicesSpeech-iOS";
+			sourceTree = "<group>";
+		};
+		FABC428A3975B2A576C7BDBC43047A11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F69946D98C1E302250C260FD54F1B78F /* MicrosoftCognitiveServicesSpeech.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A610253E386947F710895F1CA80F47A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D70593BF93768CA26BE7AD6341971DE /* Pods-Read and Learn-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC7930EDD9D852C062F7C66C6678535E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE599BC22C3744DAB14AA3B8B885B06 /* Differ-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		24F91F379FECE7218D4B46C542076939 /* Pods-Read and Learn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D350624766BC07E7A01DC66F1E91F97A /* Build configuration list for PBXNativeTarget "Pods-Read and Learn" */;
+			buildPhases = (
+				A610253E386947F710895F1CA80F47A8 /* Headers */,
+				6AD35E1FCF06C4D1478C126C07741B73 /* Sources */,
+				C421C278B5677F5417D400E32169C76A /* Frameworks */,
+				CDF933253C2079184E394F7227F54EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2D1DCEF8F265288B6061146AE673B96 /* PBXTargetDependency */,
+				E770F57A2CF5BF4120155575152EBC77 /* PBXTargetDependency */,
+			);
+			name = "Pods-Read and Learn";
+			productName = Pods_Read_and_Learn;
+			productReference = B1B717BF90BCBEE6732BB209195D8E92 /* Pods-Read and Learn */;
+			productType = "com.apple.product-type.framework";
+		};
+		A325783180C9BEB3D60A7CAD046D1CF8 /* Differ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 407ACE79333748BE39BB8FC52F9FD7FD /* Build configuration list for PBXNativeTarget "Differ" */;
+			buildPhases = (
+				FC7930EDD9D852C062F7C66C6678535E /* Headers */,
+				31C306D53424DEA457350B187F249F9D /* Sources */,
+				03F62C120418EB02BC0B69A2EBB85B2C /* Frameworks */,
+				FD04CA2AE830D2AC8116D3B03A6C7BFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Differ;
+			productName = Differ;
+			productReference = 3436D7C5225069490C685D77EB2E7F20 /* Differ.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = DB087B0653FE99EF7A7943A83294A359 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A325783180C9BEB3D60A7CAD046D1CF8 /* Differ */,
+				97D3B6926BF0A2ABAB7F043559FA98A9 /* MicrosoftCognitiveServicesSpeech-iOS */,
+				24F91F379FECE7218D4B46C542076939 /* Pods-Read and Learn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDF933253C2079184E394F7227F54EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD04CA2AE830D2AC8116D3B03A6C7BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A68FA835EC2580FD50EC4E720D5DC8EB /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MicrosoftCognitiveServicesSpeech-iOS/MicrosoftCognitiveServicesSpeech-iOS-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MicrosoftCognitiveServicesSpeech-iOS/MicrosoftCognitiveServicesSpeech-iOS-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/MicrosoftCognitiveServicesSpeech-iOS/MicrosoftCognitiveServicesSpeech-iOS-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31C306D53424DEA457350B187F249F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D6D6FDC8C94EAD2122B1E6BA82259E /* BatchUpdate.swift in Sources */,
+				6E1942ECAAA4EF4CE294ECCF5551A7F0 /* Diff.swift in Sources */,
+				3661257520FBC2AA98ECED1D51278FC7 /* Diff+UIKit.swift in Sources */,
+				F36FCD75FAFE0BF42C23F82ED2A6CBA0 /* Differ-dummy.m in Sources */,
+				4D5B9D8852758E56F36CFB62732F6E88 /* ExtendedDiff.swift in Sources */,
+				294B9B7875575890DB0CBBBC19044190 /* ExtendedPatch.swift in Sources */,
+				0524AA8E4E9421B15F53AF7CF9367DEB /* ExtendedPatch+Apply.swift in Sources */,
+				03CE5BFF21269812D3842ABED2DCBB67 /* GenericPatch.swift in Sources */,
+				C4055DAAECCC6BC18CFA9120CE064392 /* LinkedList.swift in Sources */,
+				71A7914706235EF03A2FFB7D587F6CBF /* NestedBatchUpdate.swift in Sources */,
+				FC954850572BD282F23B5FD737C6A06D /* NestedDiff.swift in Sources */,
+				786C7860D2323FD490F012BF3AB1786B /* NestedExtendedDiff.swift in Sources */,
+				6D88643AE03BC1A98ACFF7DBBC29A4CB /* Patch.swift in Sources */,
+				B2428A3AB7DDBEC68EFFC2D32FDC506A /* Patch+Apply.swift in Sources */,
+				3EEC85CDDB842FAC5D7CBC05E6002C71 /* Patch+Sort.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD35E1FCF06C4D1478C126C07741B73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC145FFD766D9C9B8AEF56D5F6552C7 /* Pods-Read and Learn-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2D1DCEF8F265288B6061146AE673B96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Differ;
+			target = A325783180C9BEB3D60A7CAD046D1CF8 /* Differ */;
+			targetProxy = 2422A9B3302281E6431F18DC1B5BADB5 /* PBXContainerItemProxy */;
+		};
+		E770F57A2CF5BF4120155575152EBC77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MicrosoftCognitiveServicesSpeech-iOS";
+			target = 97D3B6926BF0A2ABAB7F043559FA98A9 /* MicrosoftCognitiveServicesSpeech-iOS */;
+			targetProxy = E526EF290D79CDF2873ED5014B767359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0482DE1D801B78AE8208C9007598646F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D6E7D0540D4D3F81141BD60D76D6AD /* Differ.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Differ/Differ-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Differ/Differ-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Differ/Differ.modulemap";
+				PRODUCT_MODULE_NAME = Differ;
+				PRODUCT_NAME = Differ;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1DF31022DDCF25572CE331654724821C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0774CCE0C46FFCE38BAAC37B18EDE5BA /* Differ.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Differ/Differ-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Differ/Differ-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Differ/Differ.modulemap";
+				PRODUCT_MODULE_NAME = Differ;
+				PRODUCT_NAME = Differ;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2170B97923767FB398EA01316ADAB479 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0EA6A6EE3BBFE4084F95A12902F02D /* Pods-Read and Learn.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4FA6FE6ACC9159A0E662126431F08CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1848C8EC802C383B262C044211D6E51 /* MicrosoftCognitiveServicesSpeech-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		95E0A4E5D41495BE6DAA5BD4A2C2EF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E22B8FA989A98900C173D11700000DE /* MicrosoftCognitiveServicesSpeech-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BC474C8D01C30BB976DDFBC68F71EF90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E1F2CF09CD4408D83CA7DE5622BF278 /* Pods-Read and Learn.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		407ACE79333748BE39BB8FC52F9FD7FD /* Build configuration list for PBXNativeTarget "Differ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DF31022DDCF25572CE331654724821C /* Debug */,
+				0482DE1D801B78AE8208C9007598646F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A086A6A8E0A37DD0FC892F865802DB64 /* Build configuration list for PBXAggregateTarget "MicrosoftCognitiveServicesSpeech-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA6FE6ACC9159A0E662126431F08CDF /* Debug */,
+				95E0A4E5D41495BE6DAA5BD4A2C2EF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D350624766BC07E7A01DC66F1E91F97A /* Build configuration list for PBXNativeTarget "Pods-Read and Learn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2170B97923767FB398EA01316ADAB479 /* Debug */,
+				BC474C8D01C30BB976DDFBC68F71EF90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

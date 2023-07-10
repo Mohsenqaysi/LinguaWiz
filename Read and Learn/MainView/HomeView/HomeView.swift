@@ -71,9 +71,13 @@ extension HomeView {
             }
             .background {
                 Image(level.icon)
+                    .resizable()
+                    .scaledToFill()
             }
         }
-        .frame(width: 319, height: 150)
+        .frame(height: 150)
+        .frame(maxWidth: .infinity)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
         .padding(.horizontal, 24)
     }
 }

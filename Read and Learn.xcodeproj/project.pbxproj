@@ -32,6 +32,7 @@
 		107853712A5744F900FE5B33 /* ArrayExtesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853702A5744F900FE5B33 /* ArrayExtesnions.swift */; };
 		107853742A57454900FE5B33 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853732A57454900FE5B33 /* WordListView.swift */; };
 		107853772A574B6700FE5B33 /* PronunciationAssessmenMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */; };
+		10D77C702A5B03120032DB98 /* WordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		A76DD8289424B0E8066674B2 /* Pods_Read_and_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */; };
 		FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */; };
@@ -70,6 +71,7 @@
 		107853702A5744F900FE5B33 /* ArrayExtesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtesnions.swift; sourceTree = "<group>"; };
 		107853732A57454900FE5B33 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationAssessmenMamager.swift; sourceTree = "<group>"; };
+		10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewModel.swift; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9C59A0EC935A694CA9C07 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.release.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				107853732A57454900FE5B33 /* WordListView.swift */,
+				10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */,
 			);
 			path = "Practice View";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				FC7B9F8629FFF9F9003DC39A /* HomeViewModel.swift in Sources */,
 				FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */,
 				FC12490429FFF08F006A5668 /* TabBarItem.swift in Sources */,
+				10D77C702A5B03120032DB98 /* WordListViewModel.swift in Sources */,
 				FC1D5FD32A28C5EE0056413A /* DetailsViewModel.swift in Sources */,
 				100D63AF2A4857FE00A67C4F /* AudioRecorder.swift in Sources */,
 				107049862A4DF0E00060C8D2 /* DictionaryViewModel.swift in Sources */,
@@ -494,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -548,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -590,7 +594,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -626,7 +630,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
