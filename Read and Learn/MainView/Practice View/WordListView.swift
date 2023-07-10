@@ -10,6 +10,11 @@ import DesignSystem
 
 struct WordListView: View {
     @AppStorage("savedErrorsList") var items: [String] = []
+    private var viewModel: WordListViewModel
+    
+    init(viewModel: WordListViewModel) {
+        self.viewModel = viewModel
+    }
 
     private let columns = [
         GridItem(.flexible()),
@@ -21,7 +26,7 @@ struct WordListView: View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(items, id: \.self) { word in
+                    ForEach(viewModel.wordSet(items) , id: \.self) { word in
                         Button {
                         } label: {
                             Text(word)
@@ -35,14 +40,11 @@ struct WordListView: View {
                     }
                 }
             }
+//            .onAppear {
+//                viewModel.wordSet(items)
+//            }
             .navigationTitle("Word List")
             .padding(.horizontal, 24)
         }
-    }
-}
-
-struct PracticeView_Previews: PreviewProvider {
-    static var previews: some View {
-        WordListView()
     }
 }

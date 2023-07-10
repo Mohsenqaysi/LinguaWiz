@@ -43,7 +43,7 @@ struct MainView: View {
     func TabItemView(for tabItemView: TabBarItem) -> some View {
         switch tabItemView {
         case .home: HomeView(viewModel: viewModel.homeViewModel)
-        case .wordList: WordListView()
+        case .wordList: WordListView(viewModel: WordListViewModel())
         case .profile: Button {
             UserDefaults.standard.removeObject(forKey: "appStorageUserlevel")
         } label: {
