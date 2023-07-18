@@ -10,7 +10,6 @@ import Foundation
 class MainViewModel: ObservableObject {
 
     @Published var selectedTab: TabBarItem
-    @Published var isLoggedIn: Bool = false
     
     init(selectedTab: TabBarItem = .home) {
         self.selectedTab = selectedTab
@@ -27,8 +26,9 @@ extension MainViewModel {
     var onBordingViewModel: OnBordingViewModel {
         let viewModel = OnBordingViewModel()
         viewModel.didTapGetStarted = {
-            self.isLoggedIn = true
-            self.selectedTab = .home
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.selectedTab = .home
+            }
         }
         return viewModel
     }

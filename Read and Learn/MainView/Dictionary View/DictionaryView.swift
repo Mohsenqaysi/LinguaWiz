@@ -9,14 +9,14 @@ import SwiftUI
 import AVFoundation
 
 struct DictionaryView: View {
-    @ObservedObject private var viewModel: DictionaryViewModel
+    @StateObject private var viewModel: DictionaryViewModel
     @StateObject private var soundManager = SoundManager()
-    @ObservedObject private var synthVM: SynthViewModel = SynthViewModel()
+    @StateObject private var synthVM: SynthViewModel = SynthViewModel()
     
     @Environment(\.dismiss) var dismiss
     
     init(viewModel: DictionaryViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = .init(wrappedValue: viewModel)
     }
     
     var body: some View {

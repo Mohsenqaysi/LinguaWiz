@@ -10,10 +10,10 @@ import SwiftUI
 
 struct RecodingView: View {
     
-    @ObservedObject private var audioRecorder: AudioRecorder
+    @StateObject private var audioRecorder: AudioRecorder
     
     init(audioRecorder: AudioRecorder) {
-        self.audioRecorder = audioRecorder
+        self._audioRecorder = .init(wrappedValue: audioRecorder)
     }
     
     var body: some View {

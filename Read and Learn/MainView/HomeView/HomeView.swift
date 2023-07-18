@@ -9,20 +9,25 @@ import SwiftUI
 import DesignSystem
 
 struct HomeView: View {
-    @ObservedObject private var viewModel: HomeViewModel
-    @State private var showNavigationBar = true
+    @StateObject private var viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = .init(wrappedValue: viewModel)
     }
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                ForEach(viewModel.levels, id: \.title) { level in
+//                Button {
+//                    viewModel.unlockLevel(1)
+//                } label: {
+//                    Text("Open Level 1")
+//                }
+
+                ForEach(viewModel.levels, id: \.id) { level in
                     NavigationLink {
                         VStack(alignment: .center) {
-                            DetailsView(viewModel: DetailsViewModel(level: level))
+                            DetailsView(viewModel: viewModel.detailsViewModel, level: level)
                         }
                         .toolbar(.hidden, for: .tabBar)
                         .navigationBarTitle("\(level.title) \(level.subTitle)", displayMode: .inline)
@@ -34,6 +39,9 @@ struct HomeView: View {
                     }
                     .disabled(!level.unlocked)
                 }
+            }
+            .onAppear {
+                viewModel.readLevels()
             }
             .navigationTitle(viewModel.name)
         }

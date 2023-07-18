@@ -17,11 +17,11 @@ class PronunciationAssessmenMamager: ObservableObject {
     @Published var errorsList: [Word] = []
     @Published var pronunciationResult: String?
 
-    var sub: String
+    var key: String
     var region: String
     
-    private init(sub: String = "1bbef2e22b60439d8ecdc6b25ebc9897", region: String = "eastus") {
-        self.sub = sub
+    private init(key: String = "1bbef2e22b60439d8ecdc6b25ebc9897", region: String = "eastus") {
+        self.key = key
         self.region = region
     }
     
@@ -43,7 +43,7 @@ class PronunciationAssessmenMamager: ObservableObject {
             print("pronunciation assessment audio file path: ", path.absoluteString)
             
             
-            let speechConfig = try SPXSpeechConfiguration(subscription: sub, region: region)
+            let speechConfig = try SPXSpeechConfiguration(subscription: key, region: region)
             let audioDataWithHeader = try Data(contentsOf: path)
             
             let audioData = Array(audioDataWithHeader[46..<audioDataWithHeader.count])

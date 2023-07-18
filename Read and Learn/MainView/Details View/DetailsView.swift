@@ -13,7 +13,8 @@ import ActivityIndicatorView
 
 struct DetailsView: View {
     @AppStorage("savedErrorsList") var savedErrorsList: [String] = []
-    @ObservedObject private var viewModel: DetailsViewModel
+    
+    @StateObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
     @ObservedObject private var audioPlayer = AudioPlayer()
@@ -22,10 +23,13 @@ struct DetailsView: View {
     @State var showResutl: Bool = false
     
     init(viewModel: DetailsViewModel,
+         level: Level,
          audioRecorder: AudioRecorder = AudioRecorder(),
          synthVM: SynthViewModel = SynthViewModel()
     ) {
-        self.viewModel = viewModel
+        viewModel.level = level
+        viewModel.index = level.readings.fromIndex
+        self._viewModel = .init(wrappedValue: viewModel)
         self.audioRecorder = audioRecorder
         self.synthVM = synthVM
     }
@@ -212,7 +216,7 @@ extension DetailsView {
             if synthVM.isSpeaking {
                 synthVM.stop()
             } else {
-                synthVM.speak(text: viewModel.readingsList[viewModel.index])
+                synthVM.speak(text: viewModel.referenceText)
             }
         } label: {
             Image(systemName: synthVM.isSpeaking ? "speaker.wave.2.circle.fill" : "speaker.circle")
@@ -325,9 +329,9 @@ extension DetailsView {
     private var nextButtonView: some View {
         Button {
             deleteCurrentAudio()
-            print("maxValue: \(viewModel.maxValue)")
+//            print("maxValue: \(viewModel.maxValue)")
             if viewModel.index < viewModel.maxValue {
-                print("index: \(viewModel.index)")
+//                print("index: \(viewModel.index)")
                 viewModel.index += 1
             }
         } label: {
@@ -349,7 +353,7 @@ extension DetailsView {
             deleteCurrentAudio()
             print("minValue: \(viewModel.minValue)")
             if viewModel.index >= viewModel.minValue {
-                print("index: \(viewModel.index)")
+//                print("index: \(viewModel.index)")
                 viewModel.index -= 1
             }
         } label: {

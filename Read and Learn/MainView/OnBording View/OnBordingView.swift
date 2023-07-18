@@ -9,12 +9,12 @@ import SwiftUI
 import DesignSystem
 
 struct OnBordingView: View {
-    @ObservedObject private var viewModel: OnBordingViewModel
+    @StateObject private var viewModel: OnBordingViewModel
     @State private var appStorageUserlevel: Levels = .A
     @State var presentAlert: Bool = false
     
     init(_ viewModel: OnBordingViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = .init(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -43,7 +43,7 @@ struct OnBordingView: View {
 extension OnBordingView {
     
     private var segmentedView: some View {
-        Picker("What is your favorite color?", selection: $appStorageUserlevel) {
+        Picker("", selection: $appStorageUserlevel) {
             ForEach(viewModel.levels, id: \.id) {
                 Text($0.title)
                     .font(Typography.title.font)

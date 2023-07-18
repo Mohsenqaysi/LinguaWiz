@@ -46,19 +46,10 @@ struct MainView: View {
         case .wordList: WordListView(viewModel: WordListViewModel())
         case .profile: Button {
             UserDefaults.standard.removeObject(forKey: "appStorageUserlevel")
+            UserDefaults.standard.removeObject(forKey: "levels")
         } label: {
             Text("Clear user data")
         }
-        }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        ForEach(["iPhone 14", "iPad mini (6th generation)", "iPad Pro (12.9-inch) (6th generation)"], id: \.self) { deviceName in
-            MainView()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
         }
     }
 }
