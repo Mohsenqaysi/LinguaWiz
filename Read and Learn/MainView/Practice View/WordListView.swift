@@ -26,7 +26,7 @@ struct WordListView: View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(viewModel.wordSet(items) , id: \.self) { word in
+                    ForEach(String().wordSet(items) , id: \.self) { word in
                         Button {
                         } label: {
                             Text(word)

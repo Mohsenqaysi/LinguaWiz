@@ -7,10 +7,21 @@
 
 import SwiftUI
 import DesignSystem
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import Firebase
 
 struct ResultView: View {
     @AppStorage("savedErrorsList") var savedErrorsList: [String] = []
+    @State private var errors: [String] = []
     @Binding private var showResutl: Bool
+    private var level: Level
+    @State private var userID: String? {
+        didSet {
+            createSession()
+        }
+    }
 
     private var pronunciationMamager = PronunciationAssessmenMamager.shared
     private let columns = [
@@ -20,14 +31,49 @@ struct ResultView: View {
     ]
     
     init(_ pronunciationMamager: PronunciationAssessmenMamager = PronunciationAssessmenMamager.shared,
-         showResutl: Binding<Bool>
+         showResutl: Binding<Bool>,
+         level: Level
     ) {
         self.pronunciationMamager = pronunciationMamager
         self._showResutl = showResutl
+        self.level = level
     }
     
     var body: some View {
         ResultView
+            .onAppear {
+                fetchUserID()
+            }
+    }
+    
+    func fetchUserID() {
+        Auth.auth().signInAnonymously { authResult, error in
+            guard let user = authResult?.user else { return }
+            print("fetchUserID uid: \(user.uid)")
+            self.userID = user.uid
+        }
+    }
+    
+    private func createSession() {
+        let db = Firestore.firestore()
+        guard let userID = userID else { return }
+        let docRef = db.collection("Pronunciation").document(userID)
+
+        let data: [String : Any] = [
+            Date().description : [
+                level.title : level.subTitle,
+                "Pronunciation Result for text \(level.readings.fromIndex+1)" : pronunciationMamager.pronunciationResult as Any,
+                "Errors" : String().wordSet(errors),
+            ] as [String : Any]
+        ]
+        
+        docRef.setData(data, merge: true) { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
 }
 
@@ -70,6 +116,7 @@ extension ResultView {
             }
             .onAppear {
                 pronunciationMamager.errorsList.forEach {
+                    errors.append($0.word)
                     if !savedErrorsList.contains($0.word) {
                         savedErrorsList.append($0.word)
                     }

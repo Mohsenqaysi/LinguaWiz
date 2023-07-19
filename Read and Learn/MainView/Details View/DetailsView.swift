@@ -13,7 +13,6 @@ import ActivityIndicatorView
 
 struct DetailsView: View {
     @AppStorage("savedErrorsList") var savedErrorsList: [String] = []
-    
     @StateObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
@@ -58,7 +57,9 @@ struct DetailsView: View {
             activityIndicatorView
         }
         .sheet(isPresented: $showResutl) {
-            ResultView(pronunciationMamager, showResutl: $showResutl)
+            if let level = viewModel.level {
+                ResultView(pronunciationMamager, showResutl: $showResutl, level: level)
+            }
         }
         .sheet(isPresented: $displayDictionarySheet, onDismiss: {
             viewModel.isSelected = nil

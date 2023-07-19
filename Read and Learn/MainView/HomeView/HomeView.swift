@@ -10,7 +10,7 @@ import DesignSystem
 
 struct HomeView: View {
     @StateObject private var viewModel: HomeViewModel
-    
+
     init(viewModel: HomeViewModel) {
         self._viewModel = .init(wrappedValue: viewModel)
     }
@@ -18,12 +18,6 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-//                Button {
-//                    viewModel.unlockLevel(1)
-//                } label: {
-//                    Text("Open Level 1")
-//                }
-
                 ForEach(viewModel.levels, id: \.id) { level in
                     NavigationLink {
                         VStack(alignment: .center) {
@@ -40,10 +34,10 @@ struct HomeView: View {
                     .disabled(!level.unlocked)
                 }
             }
-            .onAppear {
-                viewModel.readLevels()
-            }
             .navigationTitle(viewModel.name)
+        }
+        .onAppear {
+            viewModel.readLevels()
         }
     }
 }
