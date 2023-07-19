@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
+}
 
 @main
 struct Read_and_LearnApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @Environment (\.scenePhase) private var scenePhase
     @State var timer: Timer.TimerPublisher = Timer.publish(every: 0.1, on: .main, in: .common)
     @State var timeSpent = 0.0
@@ -36,7 +45,7 @@ struct Read_and_LearnApp: App {
                         .disabled(true)
                         .onReceive(timer) { _ in
                             timeSpent += 0.1
-//                            print(String(format: "%.1f", timeSpent))
+                            //                            print(String(format: "%.1f", timeSpent))
                         }
                 }
                 .preferredColorScheme(.light)
