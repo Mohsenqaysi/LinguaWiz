@@ -50,6 +50,7 @@ struct MainView: View {
         } label: {
             Text("Clear user data")
         }
+        case .vocablary: VocablaryView()
         }
     }
 }

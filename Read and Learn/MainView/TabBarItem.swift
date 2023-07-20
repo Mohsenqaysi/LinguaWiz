@@ -11,6 +11,7 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
     var id: Self { self }
     case home
     case wordList
+    case vocablary
     case profile
 
     var icon: String {
@@ -19,6 +20,8 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
             return "homeIcon"
         case .wordList:
             return "startsIcon"
+        case .vocablary:
+            return "vocabularyIcon"
         case .profile:
             return "profileIcon"
         }
@@ -32,6 +35,8 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
             return "Word List"
         case .profile:
             return "Profile"
+        case .vocablary:
+            return "Vocabulary Practice"
         }
     }
 }

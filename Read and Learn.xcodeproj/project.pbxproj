@@ -34,6 +34,7 @@
 		107853772A574B6700FE5B33 /* PronunciationAssessmenMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */; };
 		10D77C702A5B03120032DB98 /* WordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
+		335F03162A6982D60042EB12 /* VocablaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F03152A6982D60042EB12 /* VocablaryView.swift */; };
 		8A6BDF022A5C375600E52051 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF012A5C375600E52051 /* ResultView.swift */; };
 		8A6BDF052A5C3B4100E52051 /* OnBordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF042A5C3B4100E52051 /* OnBordingView.swift */; };
 		8A6BDF072A5C4E0300E52051 /* OnBordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF062A5C4E0300E52051 /* OnBordingViewModel.swift */; };
@@ -80,6 +81,7 @@
 		107853732A57454900FE5B33 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationAssessmenMamager.swift; sourceTree = "<group>"; };
 		10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewModel.swift; sourceTree = "<group>"; };
+		335F03152A6982D60042EB12 /* VocablaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocablaryView.swift; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		8A6BDF012A5C375600E52051 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8A6BDF042A5C3B4100E52051 /* OnBordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBordingView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,14 @@
 			path = "Pronunciation Assessmen Mamager";
 			sourceTree = "<group>";
 		};
+		335F03142A6982C50042EB12 /* Vocablary View */ = {
+			isa = PBXGroup;
+			children = (
+				335F03152A6982D60042EB12 /* VocablaryView.swift */,
+			);
+			path = "Vocablary View";
+			sourceTree = "<group>";
+		};
 		8A6BDF032A5C3B2D00E52051 /* OnBording View */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +282,7 @@
 		FC12490029FFF057006A5668 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				335F03142A6982C50042EB12 /* Vocablary View */,
 				8A6BDF032A5C3B2D00E52051 /* OnBording View */,
 				107853722A57453A00FE5B33 /* Practice View */,
 				107049822A4DF0B30060C8D2 /* Dictionary View */,
@@ -446,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335F03162A6982D60042EB12 /* VocablaryView.swift in Sources */,
 				FC1248F529FFEFC9006A5668 /* MainView.swift in Sources */,
 				FC7B9F8629FFF9F9003DC39A /* HomeViewModel.swift in Sources */,
 				FC1248F329FFEFC9006A5668 /* Read_and_LearnApp.swift in Sources */,
