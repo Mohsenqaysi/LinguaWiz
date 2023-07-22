@@ -28,7 +28,6 @@
 		107853672A570F4100FE5B33 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853662A570F4100FE5B33 /* Word.swift */; };
 		1078536A2A570F9200FE5B33 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853692A570F9200FE5B33 /* StringExtensions.swift */; };
 		1078536D2A57120200FE5B33 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1078536C2A57120200FE5B33 /* ActivityIndicatorView */; };
-		1078536F2A57447500FE5B33 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1078536E2A57447400FE5B33 /* .gitignore */; };
 		107853712A5744F900FE5B33 /* ArrayExtesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853702A5744F900FE5B33 /* ArrayExtesnions.swift */; };
 		107853742A57454900FE5B33 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853732A57454900FE5B33 /* WordListView.swift */; };
 		107853772A574B6700FE5B33 /* PronunciationAssessmenMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */; };
@@ -76,7 +75,6 @@
 		107049852A4DF0E00060C8D2 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 		107853662A570F4100FE5B33 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		107853692A570F9200FE5B33 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		1078536E2A57447400FE5B33 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		107853702A5744F900FE5B33 /* ArrayExtesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtesnions.swift; sourceTree = "<group>"; };
 		107853732A57454900FE5B33 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationAssessmenMamager.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			children = (
 				8AFCE1782A66FB0E009C4E46 /* GoogleService-Info.plist */,
 				107853752A574B5C00FE5B33 /* Pronunciation Assessmen Mamager */,
-				1078536E2A57447400FE5B33 /* .gitignore */,
 				107853682A570F7200FE5B33 /* Extensions */,
 				107049752A4DEDE70060C8D2 /* NetworkLayer */,
 				107049722A4DED440060C8D2 /* Model */,
@@ -403,7 +400,6 @@
 			files = (
 				FC1248FA29FFEFCA006A5668 /* Preview Assets.xcassets in Resources */,
 				8AFCE1792A66FB0E009C4E46 /* GoogleService-Info.plist in Resources */,
-				1078536F2A57447500FE5B33 /* .gitignore in Resources */,
 				FC1248F729FFEFCA006A5668 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
