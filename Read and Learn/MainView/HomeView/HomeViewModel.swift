@@ -68,7 +68,7 @@ class HomeViewModel: ObservableObject {
 // MARK: VARS
 extension HomeViewModel {
     var name: String {
-        return "Hi their, welcome 😊"
+        return "Hi there 😊"
     }
     
     private var level: [Level] {

@@ -79,7 +79,7 @@ class PronunciationAssessmenMamager: ObservableObject {
                     return
                 }
                 var finalResult = ""
-                let resultText = "Accuracy Score: \(pronunciationResult.accuracyScore)\nPronunciation Score: \(pronunciationResult.pronunciationScore)\nCompleteness Score: \(pronunciationResult.completenessScore)\nFluency Score: \(pronunciationResult.fluencyScore)"
+                let resultText = "Accuracy Score: \(pronunciationResult.accuracyScore) out of 100\nPronunciation Score: \(pronunciationResult.pronunciationScore) out of 100\nCompleteness Score: \(pronunciationResult.completenessScore) out of 100\nFluency Score: \(pronunciationResult.fluencyScore) out of 100"
                 print(resultText)
                 finalResult.append("\(resultText)\n")
                 finalResult.append("\nword    accuracyScore   errorType\n")

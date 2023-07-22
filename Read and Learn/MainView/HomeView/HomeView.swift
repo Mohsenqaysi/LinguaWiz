@@ -64,9 +64,9 @@ extension HomeView {
                     Text(level.title)
                         .foregroundColor(Palette.basicWhite.color)
                         .font(Typography.title2.font)
-                    Text(level.subTitle)
-                        .foregroundColor(Palette.basicWhite.color)
-                        .font(Typography.headline.font)
+//                    Text(level.subTitle)
+//                        .foregroundColor(Palette.basicWhite.color)
+//                        .font(Typography.headline.font)
                 }
                 .padding()
                 Spacer()

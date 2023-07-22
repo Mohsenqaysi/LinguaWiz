@@ -55,7 +55,7 @@ struct DictionaryView: View {
                             }
                         }
                     } else {
-                        Text("Sorry no deifitions was found for <\(viewModel.word)>")
+                        Text("No deifitions were found.")
                             .foregroundColor(.black)
                             .bold()
                     }
