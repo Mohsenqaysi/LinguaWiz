@@ -34,7 +34,6 @@ struct WordListView: View {
         VStack(alignment: .center, spacing: 20) {
             if !viewModel.reading.isEmpty {
                 textPlaceHolderView
-                Spacer()
                 showResultButtonView
                     .padding(.bottom, 4)
                 Spacer()
@@ -66,9 +65,6 @@ struct WordListView: View {
                 .presentationDetents([.medium, .large])
         }
         .onAppear {
-//            viewModel.reading = words
-//            let newarray = words.shuffled()
-//            print(newarray)
             deleteCurrentAudio()
         }
         .onDisappear {
@@ -84,7 +80,7 @@ extension WordListView {
         if let pronunciationResult = pronunciationMamager.pronunciationResult {
             Text(pronunciationResult)
                 .foregroundColor(Palette.basicBlack.color)
-                .font(Typography.bodySemiBold.font)
+                .font(Typography.footnoteSemiBold.font)
         }
     }
     

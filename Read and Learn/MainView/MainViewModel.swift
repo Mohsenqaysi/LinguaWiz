@@ -11,23 +11,22 @@ class MainViewModel: ObservableObject {
 
     @Published var selectedTab: TabBarItem
     
-    init(selectedTab: TabBarItem = .profile) {
+    init(selectedTab: TabBarItem = .home) {
         self.selectedTab = selectedTab
     }
 }
 
 //MARK: Models
 extension MainViewModel {
-    var homeViewModel: HomeViewModel {
-        let viewModel = HomeViewModel()
-        return viewModel
-    }
 
     var onBordingViewModel: OnBordingViewModel {
         let viewModel = OnBordingViewModel()
         viewModel.didTapGetStarted = {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.selectedTab = .home
+                self.selectedTab = .wordList
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    self.selectedTab = .home
+                }
             }
         }
         return viewModel

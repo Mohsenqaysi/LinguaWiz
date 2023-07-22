@@ -44,9 +44,6 @@ struct Reading: Codable, Identifiable {
 
 
 class HomeViewModel: ObservableObject {
-    let appStorageUserlevel = UserDefaults.standard.string(forKey: "appStorageUserlevel")
-    let curentLevel = UserDefaults.standard.integer(forKey: "curentLevel")
-    let curentLevelReadingIndex = UserDefaults.standard.integer(forKey: "curentLevelReadingIndex")
 
     let userDefult = UserDefaults.standard
     let forKey = "levels"
@@ -60,9 +57,14 @@ class HomeViewModel: ObservableObject {
             print("levels didSet: \(levels.count)")
         }
     }
+
     @Published var displaySelectedLevel: Bool = false
     
-    init() {}
+    private var appStorageUserlevel: Levels
+
+    init(_ appStorageUserlevel: Levels) {
+        self.appStorageUserlevel = appStorageUserlevel
+    }
 }
 
 // MARK: VARS
@@ -71,8 +73,8 @@ extension HomeViewModel {
         return "Hi there 😊"
     }
     
-    private var level: [Level] {
-        switch appStorageUserlevel {
+    var level: [Level] {
+        switch appStorageUserlevel.title {
         case "A1 - A2":
             return [
                 Level("Level One", index: 0, subTitle: "A1 - A2", icon: levelOneIcon,
@@ -227,24 +229,25 @@ extension HomeViewModel {
             }
 
             do {
-                var levels = self.levels
-                guard let index = levels.firstIndex(where: {
+                var tempLevels = self.levels
+                guard let index = tempLevels.firstIndex(where: {
                     $0.title == level.title && $0.id == level.id && $0.readings.id == level.readings.id
                 }) else {
                     print("Level not found in the list.")
                     return
                 }
                 
-                levels[index] = level
+                tempLevels[index] = level
 
                 if level.readings.fromIndex >= 3 && index <= 2 {
-                    levels[index + 1].unlocked = true
-                    print("Level: \(levels[index + 1].title) - unlocked: \(levels[index + 1].unlocked)")
+                    tempLevels[index + 1].unlocked = true
+                    print("Level: \(tempLevels[index + 1].title) - unlocked: \(tempLevels[index + 1].unlocked)")
                 }
                 
-                let data = try JSONEncoder().encode(levels)
+                let data = try JSONEncoder().encode(tempLevels)
                 // Write Data
                 self.userDefult.set(data, forKey: "levels")
+                self.levels = tempLevels
             } catch {
                 print("Unable to Encode Levels (\(error))")
             }

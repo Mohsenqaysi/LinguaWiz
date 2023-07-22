@@ -12,11 +12,10 @@ import DesignSystem
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
     @AppStorage("savedErrorsList") var words: [String] = []
-
-    let appStorageUserlevel = UserDefaults.standard.string(forKey: "appStorageUserlevel")
+    @AppStorage("appStorageUserlevel") private var userlevel: Levels = .None
 
     var body: some View {
-        if appStorageUserlevel != nil {
+        if (userlevel != .None) {
             TabView(selection: $viewModel.selectedTab) {
                 ForEach(TabBarItem.allCases, id: \.id) { item in
                     TabItemView(for: viewModel.selectedTab)
@@ -44,15 +43,8 @@ struct MainView: View {
     @ViewBuilder
     func TabItemView(for tabItemView: TabBarItem) -> some View {
         switch tabItemView {
-        case .home: HomeView(viewModel: viewModel.homeViewModel)
+        case .home: HomeView(viewModel: HomeViewModel(userlevel))
         case .wordList: WordListView(viewModel: WordListViewModel(words.shuffled()))
-        case .profile: Button {
-            UserDefaults.standard.removeObject(forKey: "appStorageUserlevel")
-            UserDefaults.standard.removeObject(forKey: "levels")
-            words = []
-        } label: {
-            Text("Clear user data")
-        }
         case .vocablary: VocablaryView()
         }
     }

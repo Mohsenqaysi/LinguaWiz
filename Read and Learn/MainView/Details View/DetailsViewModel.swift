@@ -13,8 +13,8 @@ class DetailsViewModel: ObservableObject {
         didSet {
             print("index: \(index)")
 //            if level != nil {
-                level?.readings.fromIndex = index
-                didUpdateLevel?(level)
+//                level?.readings.fromIndex = index
+//                didUpdateLevel?(level)
 //            }
 //            UserDefaults.standard.set(level?.index, forKey: "curentLevel")
 //            UserDefaults.standard.set(index, forKey: "curentLevelReadingIndex")
@@ -32,6 +32,25 @@ class DetailsViewModel: ObservableObject {
     var didUpdateLevel: ((_ level: Level?) -> Void)?
 
     init() {}
+
+    func increment() {
+        if index < maxValue {
+            index += 1
+            updateLevel()
+        }
+    }
+
+    func decrement() {
+        if index >= minValue {
+            index -= 1
+            updateLevel()
+        }
+    }
+
+    func updateLevel() {
+        level?.readings.fromIndex = index
+        didUpdateLevel?(level)
+    }
 }
 
 extension DetailsViewModel {

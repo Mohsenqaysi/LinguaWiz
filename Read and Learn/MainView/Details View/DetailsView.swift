@@ -329,11 +329,7 @@ extension DetailsView {
     private var nextButtonView: some View {
         Button {
             deleteCurrentAudio()
-//            print("maxValue: \(viewModel.maxValue)")
-            if viewModel.index < viewModel.maxValue {
-//                print("index: \(viewModel.index)")
-                viewModel.index += 1
-            }
+            viewModel.increment()
         } label: {
             Text(viewModel.nextButtonTitle)
                 .foregroundColor(Palette.basicBlack.color)
@@ -351,11 +347,7 @@ extension DetailsView {
     private var previousButtonView: some View {
         Button {
             deleteCurrentAudio()
-            print("minValue: \(viewModel.minValue)")
-            if viewModel.index >= viewModel.minValue {
-//                print("index: \(viewModel.index)")
-                viewModel.index -= 1
-            }
+            viewModel.decrement()
         } label: {
             Text(viewModel.previousTitle)
                 .foregroundColor(Palette.basicBlack.color)

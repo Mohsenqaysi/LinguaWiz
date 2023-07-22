@@ -9,12 +9,14 @@ import SwiftUI
 import DesignSystem
 
 struct OnBordingView: View {
-    @StateObject private var viewModel: OnBordingViewModel
+    @ObservedObject private var viewModel: OnBordingViewModel
+    @AppStorage("appStorageUserlevel") private var userlevel: Levels = .None
+
     @State private var appStorageUserlevel: Levels = .A
     @State var presentAlert: Bool = false
     
     init(_ viewModel: OnBordingViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -26,15 +28,12 @@ struct OnBordingView: View {
         }
         .alert("Are you sure you want to select level \(appStorageUserlevel.title) you can not change it later?", isPresented: $presentAlert, actions: {
             Button("Yes, I am sure", role: .destructive, action: {
-                UserDefaults.standard.set(appStorageUserlevel.title, forKey: "appStorageUserlevel")
+                userlevel = appStorageUserlevel
+                print(userlevel.title.description)
                 viewModel.onTapGetStarted()
             })
             Button("Cancel", role: .cancel, action: {})
         })
-
-        .onAppear {
-            print(appStorageUserlevel)
-        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Palette.backgroundSunset.color.edgesIgnoringSafeArea(.all))
     }
@@ -71,8 +70,6 @@ extension OnBordingView {
             segmentedView
             Button {
                 presentAlert.toggle()
-//                self.appStorageUserlevel = userLevel
-//                viewModel.onTapGetStarted()
             } label: {
                 Text("Get Started")
                     .foregroundColor(Palette.basicBlack.color)
