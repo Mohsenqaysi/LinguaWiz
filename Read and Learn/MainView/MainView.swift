@@ -11,6 +11,8 @@ import DesignSystem
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
+    @AppStorage("savedErrorsList") var words: [String] = []
+
     let appStorageUserlevel = UserDefaults.standard.string(forKey: "appStorageUserlevel")
 
     var body: some View {
@@ -43,10 +45,11 @@ struct MainView: View {
     func TabItemView(for tabItemView: TabBarItem) -> some View {
         switch tabItemView {
         case .home: HomeView(viewModel: viewModel.homeViewModel)
-        case .wordList: WordListView(viewModel: WordListViewModel())
+        case .wordList: WordListView(viewModel: WordListViewModel(words.shuffled()))
         case .profile: Button {
             UserDefaults.standard.removeObject(forKey: "appStorageUserlevel")
             UserDefaults.standard.removeObject(forKey: "levels")
+            words = []
         } label: {
             Text("Clear user data")
         }

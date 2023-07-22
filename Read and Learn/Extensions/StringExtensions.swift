@@ -14,8 +14,11 @@ extension StringProtocol {
 }
 
 extension String {
-    func toArray() -> [String] {
-        let array = self.components(separatedBy: " ")
+    func toArray(_ random: Bool = false) -> [String] {
+        var array = self.components(separatedBy: " ")
+        if random {
+            array.shuffle()
+        }
         return array
     }
     

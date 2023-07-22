@@ -32,7 +32,7 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
         case .home:
             return "Home"
         case .wordList:
-            return "Word List"
+            return "Words Practice"
         case .profile:
             return "Profile"
         case .vocablary:

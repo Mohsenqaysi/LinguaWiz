@@ -11,7 +11,7 @@ class MainViewModel: ObservableObject {
 
     @Published var selectedTab: TabBarItem
     
-    init(selectedTab: TabBarItem = .home) {
+    init(selectedTab: TabBarItem = .profile) {
         self.selectedTab = selectedTab
     }
 }

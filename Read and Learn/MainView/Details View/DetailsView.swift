@@ -12,7 +12,6 @@ import AnimatedWaveform
 import ActivityIndicatorView
 
 struct DetailsView: View {
-    @AppStorage("savedErrorsList") var savedErrorsList: [String] = []
     @StateObject private var viewModel: DetailsViewModel
     @ObservedObject var audioRecorder: AudioRecorder
     @ObservedObject private var synthVM: SynthViewModel
