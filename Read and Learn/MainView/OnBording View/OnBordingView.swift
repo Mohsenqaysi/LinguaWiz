@@ -100,7 +100,7 @@ By using ***LinguaWiz***, you acknowledge that you have read, understood, and ag
 
 ***2. User Engagement Metrics:***
 
-   ***LinguaWiz*** will collect user engagement metrics, including the duration of sessions spent on the app each day and the output of pronunciation errors made during the exercises. These metrics are used for the sole purpose of the Research project and enhancing your learning experience. No personal information or audio recordings will be stored or shared with third parties.
+***LinguaWiz*** will collect user engagement metrics, including the duration of sessions spent on the app each day and the output of pronunciation errors made during the exercises. These metrics are used for the sole purpose of the Research project and enhancing your learning experience. No personal information or audio recordings will be stored or shared with third parties.
 
 ***3. Privacy Policy:***
 

@@ -89,7 +89,7 @@
 		8AFCE1782A66FB0E009C4E46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A504E0E39239536B5052E15 /* Pods_Read_and_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_and_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9C59A0EC935A694CA9C07 /* Pods-Read and Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.release.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.release.xcconfig"; sourceTree = "<group>"; };
-		FC1248EF29FFEFC9006A5668 /* Read and Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Read and Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1248EF29FFEFC9006A5668 /* LinguaWiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinguaWiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1248F229FFEFC9006A5668 /* Read_and_LearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Read_and_LearnApp.swift; sourceTree = "<group>"; };
 		FC1248F429FFEFC9006A5668 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FC1248F629FFEFCA006A5668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		FC1248F029FFEFC9006A5668 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC1248EF29FFEFC9006A5668 /* Read and Learn.app */,
+				FC1248EF29FFEFC9006A5668 /* LinguaWiz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 				8AFCE1812A66FC8B009C4E46 /* FirebaseFirestore */,
 			);
 			productName = "Read and Learn";
-			productReference = FC1248EF29FFEFC9006A5668 /* Read and Learn.app */;
+			productReference = FC1248EF29FFEFC9006A5668 /* LinguaWiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -645,7 +645,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ReadandLearn.Read-and-Learn";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinguaWiz;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -681,7 +681,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ReadandLearn.Read-and-Learn";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinguaWiz;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

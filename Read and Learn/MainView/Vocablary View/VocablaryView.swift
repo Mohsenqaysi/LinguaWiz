@@ -30,9 +30,9 @@ struct VocablaryView: View {
             if currentQuestionIndex < questions.count {
                 VStack {
                     Text("Select The Correct Answer")
-                        .font(.title)
+                        .font(.title3)
                         .bold()
-                        .lineLimit(2)
+                        .lineLimit(3)
                         .foregroundColor(Palette.backgroundSunset.color)
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .frame(minHeight: 50, maxHeight: .infinity)

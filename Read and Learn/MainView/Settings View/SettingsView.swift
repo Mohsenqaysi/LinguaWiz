@@ -18,6 +18,8 @@ struct SettingsView: View {
         "Firebase": "https://github.com/firebase/firebase-ios-sdk",
         "Pronunciation Assessment API": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/pronunciation-assessment-tool?tabs=display",
         "Apple ACSpeech Synthesizer": "https://developer.apple.com/documentation/avfaudio/avspeechsynthesizer/",
+        "Reading passages used in the app were generate using ChatGPT": "http://chat.openai.com",
+        "Vocabulary and definitions in quizzes are derived from": "http://www.uefap.com/vocab/select/awl.htm",
     ]
 
     var body: some View {
@@ -26,9 +28,9 @@ struct SettingsView: View {
                 List {
                     ForEach(sources.sorted(by: <), id: \.key) { key, value in
                         HStack(alignment: .center, spacing: 8) {
+                            Text(key)
+                                .font(.subheadline)
                             if let url = URL(string: value) {
-                                Text(key)
-                                    .font(.headline)
                                 Link(destination: url) {
                                     Image(systemName: "link.circle.fill")
                                         .font(.title2)
@@ -38,6 +40,14 @@ struct SettingsView: View {
                         }
                     }
                 }
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("Version 1.0")
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 10)
+                    Spacer()
+                }
+                .background(.clear)
             }
             .frame(minWidth: 0, maxWidth: .infinity)
             .navigationTitle("Credits")
