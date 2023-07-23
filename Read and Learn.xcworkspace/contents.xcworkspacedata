@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Read and Learn.xcodeproj">
+      location = "group:/Users/mqaysi/Read-and-Learn/LinguaWiz.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -46,6 +46,7 @@ struct MainView: View {
         case .home: HomeView(viewModel: HomeViewModel(userlevel))
         case .wordList: WordListView(viewModel: WordListViewModel(words.shuffled()))
         case .vocablary: VocablaryView()
+        case .settings: SettingsView()
         }
     }
 }

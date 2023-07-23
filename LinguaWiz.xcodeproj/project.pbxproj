@@ -34,6 +34,7 @@
 		10D77C702A5B03120032DB98 /* WordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */; };
 		10FAAECF2A5234CE00CB547E /* AnimatedWaveform in Frameworks */ = {isa = PBXBuildFile; productRef = 10FAAECE2A5234CE00CB547E /* AnimatedWaveform */; };
 		335F03162A6982D60042EB12 /* VocablaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F03152A6982D60042EB12 /* VocablaryView.swift */; };
+		339678A02A6C46C400DDA813 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396789F2A6C46C400DDA813 /* SettingsView.swift */; };
 		8A6BDF022A5C375600E52051 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF012A5C375600E52051 /* ResultView.swift */; };
 		8A6BDF052A5C3B4100E52051 /* OnBordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF042A5C3B4100E52051 /* OnBordingView.swift */; };
 		8A6BDF072A5C4E0300E52051 /* OnBordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6BDF062A5C4E0300E52051 /* OnBordingViewModel.swift */; };
@@ -80,6 +81,7 @@
 		107853762A574B6700FE5B33 /* PronunciationAssessmenMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationAssessmenMamager.swift; sourceTree = "<group>"; };
 		10D77C6F2A5B03110032DB98 /* WordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewModel.swift; sourceTree = "<group>"; };
 		335F03152A6982D60042EB12 /* VocablaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocablaryView.swift; sourceTree = "<group>"; };
+		3396789F2A6C46C400DDA813 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5D30D2C4CAE973664B67954D /* Pods-Read and Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read and Learn.debug.xcconfig"; path = "Target Support Files/Pods-Read and Learn/Pods-Read and Learn.debug.xcconfig"; sourceTree = "<group>"; };
 		8A6BDF012A5C375600E52051 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8A6BDF042A5C3B4100E52051 /* OnBordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBordingView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			path = "Vocablary View";
 			sourceTree = "<group>";
 		};
+		3396789E2A6C46BA00DDA813 /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				3396789F2A6C46C400DDA813 /* SettingsView.swift */,
+			);
+			path = "Settings View";
+			sourceTree = "<group>";
+		};
 		8A6BDF032A5C3B2D00E52051 /* OnBording View */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 		FC12490029FFF057006A5668 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				3396789E2A6C46BA00DDA813 /* Settings View */,
 				335F03142A6982C50042EB12 /* Vocablary View */,
 				8A6BDF032A5C3B2D00E52051 /* OnBording View */,
 				107853722A57453A00FE5B33 /* Practice View */,
@@ -368,7 +379,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC1248EA29FFEFC9006A5668 /* Build configuration list for PBXProject "Read and Learn" */;
+			buildConfigurationList = FC1248EA29FFEFC9006A5668 /* Build configuration list for PBXProject "LinguaWiz" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -453,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339678A02A6C46C400DDA813 /* SettingsView.swift in Sources */,
 				335F03162A6982D60042EB12 /* VocablaryView.swift in Sources */,
 				FC1248F529FFEFC9006A5668 /* MainView.swift in Sources */,
 				FC7B9F8629FFF9F9003DC39A /* HomeViewModel.swift in Sources */,
@@ -682,7 +694,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC1248EA29FFEFC9006A5668 /* Build configuration list for PBXProject "Read and Learn" */ = {
+		FC1248EA29FFEFC9006A5668 /* Build configuration list for PBXProject "LinguaWiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC1248FB29FFEFCA006A5668 /* Debug */,
