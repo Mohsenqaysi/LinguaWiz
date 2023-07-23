@@ -70,7 +70,7 @@ extension OnBordingView {
             HStack {
                 Text("Terms and Conditions")
                     .foregroundColor(Palette.basicBlack.color)
-                    .font(Typography.largeTitle.font)
+                    .font(Typography.title3SemiBold.font)
                 Spacer()
                 Button {
                     displayTermsAndConditions.toggle()
@@ -135,7 +135,8 @@ By using ******LinguaWiz******, you agree to abide by these Terms and Conditions
             segmentedView
 
             Toggle(isOn: $termsAndConditions) {
-                HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("By clicking you agree to our")
                     Text("Terms and Conditions")
                         .foregroundColor(.blue)
                         .underline(true, color: .blue)
